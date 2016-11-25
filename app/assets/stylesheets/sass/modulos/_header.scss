@@ -1,0 +1,201 @@
+.header{
+	border-bottom:solid 1px #ddd;
+	height:60px;
+	position:fixed;
+	z-index:1000;
+	top:0;
+		@include to(l){
+			justify-content:space-between;
+		}
+
+		@include from(l){
+			background:white;
+		}
+
+	.logo{
+		height:auto;
+		max-width: 100%;
+		min-width: 55px;
+
+		&-contenedor{
+			//width:80px;
+		}
+	}
+
+	.menu{
+		list-style: none;
+		position: absolute;
+		top:0;
+		right: 0;
+		padding-left: 0;
+		width:300px;
+		background-color: lighten(#000,5);
+		margin-bottom: 0;
+		font-size: .9em;
+		
+
+
+			@include from(l){
+				display: flex;
+				justify-content: space-around;
+				position:relative;
+				width:80%;
+				max-width:700px;
+				background-color: transparent;
+				margin-top:0;
+
+			}
+
+				@include edMenu(l);
+			@include to(l){
+				padding-top:1em;
+				height: calc(100vh - 3px);
+				margin-top: 0;
+				max-width:400px;
+			}
+		
+		&-nav{
+			@include to(l){
+				@include edNav(right,l);
+
+				&.show-menu{
+				}
+			}
+		}
+
+		&-logo{
+			margin-top:5em;
+			width:60px;
+
+			@include to(l){
+				margin-bottom:2.5em;
+			}
+		}
+		
+
+		
+
+		&-toggle{
+
+			position: absolute !important;
+			top:50%;
+			right:10px;
+			transform: translateY(-50%);
+			@include navToggle(1.5em,$gris);
+
+			
+			@include to(l){
+				&-activo{
+					@include navToggle(1.5em,$blanco);
+				}
+			}
+
+			
+
+		}
+
+		&-item{
+			font-family: $font-titulo;
+			@include to(l){
+				margin-bottom:.5em;
+			}
+			@include from(l){
+				&:before{
+					content:"";
+					background-color:red;
+					height:2px;
+					left: 50%;
+					position:absolute;
+					bottom:0;
+					width:0%;
+					transition: all .3s;
+				}
+				&:hover:before{
+					width:100%;
+					left:0;
+				}
+			}
+
+			&:hover{
+				@include from(l){
+
+				}
+
+				@include to(l){
+						background:$negro;
+					
+				}
+			}
+				
+			&-activo{
+				@include from(l){
+					&:before{
+						left:0;
+						width:100%;
+					}
+				}
+			}
+		}
+
+		&-link{
+			text-transform:uppercase;
+			color:$gris;
+			//background-color:red;
+
+			@include to(l){
+				color:$blanco;
+				&:hover{
+					//color:lighten(#1B15DE,10);
+				}
+			}
+
+			@include from(l){
+			//line-height:1.5em !important;
+
+			}
+
+			&:hover{
+				text-decoration: none;
+			}
+		}
+
+		//Arreglando caracteristicas de ED-GRID
+		.expand-submenu{
+			position:absolute;
+		}
+
+		//Fin bloque
+	}
+
+	.submenu{
+
+		@include from(l){
+			background-color: $blanco;
+		}
+
+		&.show-submenu{
+			@include from(l){
+				margin-left: 0 !important;
+			}
+			@include to(l){
+				background-color:$negro;
+			}
+		}
+
+		&-item{
+			@include to(l){
+				>a:hover{
+					color:#bbb;
+				}
+			}
+		}
+
+		&-link{
+			font-size:.8em;
+			text-transform:uppercase;
+		}
+
+	}
+
+
+}

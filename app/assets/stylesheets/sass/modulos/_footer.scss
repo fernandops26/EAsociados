@@ -1,0 +1,93 @@
+.footer{
+
+	padding:3em 0;
+	background:#e8e8e8;
+	&-contenedor{
+		text-align:left;
+	}
+
+	&-titulo{
+		font-family:$font-titulo;
+		font-size:1.3em;
+		text-transform:uppercase;
+	}
+
+	&-parrafo{
+		font-family:$font-texto;
+	}
+
+	&-contacto{
+		font-family:$font-texto;
+
+		&-lugar{
+			font-weight:bold;
+		}
+
+		&-direccion{
+		}
+
+		&-correo{
+
+		}
+
+		&-telefono{
+
+		}
+
+	}
+
+	&-sociales{
+		&-facebook{
+
+		}
+
+		&-twitter{
+
+		}
+	}
+
+
+	&-lista{
+		list-style:none;
+		padding-left:0;
+	}
+
+	&-item{
+
+	}
+
+	&-link{
+		line-height:1.7em;
+	}
+
+
+	&-anuncios{
+		.anuncio{
+
+			&-item{
+				overflow:hidden;
+				margin-bottom:.5em;
+				border-bottom:solid 1px;
+			}
+
+			&-titulo{
+				line-height:1.5em;
+				display:block;
+				margin:0;
+			}
+
+			&-texto{
+			 width:100%;
+			  white-space: nowrap;
+			  overflow: hidden;
+			  text-overflow: ellipsis;
+			  display: inline-block;
+			  padding:0;
+			  margin:.5em 0;
+			}
+
+		}
+
+
+	}
+}

@@ -1,0 +1,31 @@
+.formulario{
+	&-caja{
+		margin:.5em 0;
+	}
+
+	&-label{
+		display:none;
+	}
+	
+	&-text,&-textarea{
+		border:none;
+		font-size:1em ;
+		padding:.5em;
+		width:100%;
+		color:rgba(#000,.5);
+
+		&:active,&:focus{
+			outline: none;
+			box-shadow:none;
+		}
+	}
+
+	&-text{
+		border-bottom:1px solid rgba(#000,.4);
+	}
+
+	&-textarea{
+		border-bottom:1px solid rgba(#000,.4);
+		font-size:1.2em !important;
+	}
+}

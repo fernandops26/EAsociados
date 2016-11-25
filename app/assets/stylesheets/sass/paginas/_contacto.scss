@@ -1,0 +1,149 @@
+.contacto-page{
+
+	background-color: lighten(#000,95%);
+	font-family:'HelveticaNeue';
+	margin:60px 0 0;
+	.v-contacto{
+		display: flex;
+		align-items:center;
+		min-height: 250px;
+		height: 30vh;
+		position: relative;
+		width:100%;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include from(m){
+			justify-content: flex-start;
+		}
+
+		&-img,&-opacidad,&-efecto-titulo{
+			position:absolute;
+			width:100%;
+			height:100%;
+			top:0;
+			left:0;
+		}
+		&-img{
+			z-index:5;
+			background-attachment: fixed;
+		}
+
+		&-opacidad{
+			background:linear-gradient(to bottom,transparent 0,#555 100%);
+			z-index:10;
+		}
+
+		&-titulo{
+			text-align:center;
+			font-weight: bold;
+			margin-top:1.5em;
+			margin-left:.5em;
+			text-transform:uppercase;
+			position: relative;
+			z-index:20;
+			font-size:1.8em;
+			color:#fff;
+			text-shadow: 35px 35px 0px rgba(#fff, .1);
+
+			@include from(m){
+				font-size:2.2em;
+			}
+
+			
+		}
+	}
+
+	.informacion{
+		background-color:#fff;
+		margin-bottom:2em;
+		font-family:'HelveticaNeue';
+
+		&-titulo{
+			//color:$color-uno;
+			font-size:1.6em;
+
+		}
+
+		&-texto{
+			
+			font-size:.9em;
+			margin-top:2em;
+		}
+
+
+		.datos{
+				background-color: lighten(#ddd,10%);
+				padding:.5em;
+				margin-top:2em;
+				@include sombra;
+			&-titulo{
+				//color:$color-dos;
+				font-weight:bold;
+				//text-transform:uppercase;
+			}
+
+			&-atributo{
+				color:rgba(#000,.9);
+			}
+
+			&-telefono,&-email{
+				color:rgba(#000,.7);
+			}
+
+			&-direccion{
+				font-size:.9em;
+				color:rgba(#000,.9);
+
+
+			}
+
+			&-telefono{
+				font-size:.9em;
+
+			}
+
+			&-email{
+				font-size:.9em;
+
+			}
+		}
+
+		&-formulario{
+			margin-top:1em;
+			font-family:'HelveticaNeue';
+			input{
+
+				//border-bottom:1px solid $color-dos;
+				//color:rgba($color-dos,.6);
+			}
+
+			textarea{
+				border:1px solid rgba(#000,.4);
+			}
+		}
+
+
+		&-izquierda{
+			padding-left:3em;
+
+			@include to(m){
+				padding-left:1.5em;
+			}
+		}
+
+		&-derecha{
+			padding-left:2em;
+
+			@include to(m){
+				padding-left:.5em;
+			}
+		}
+	}
+
+	.mapa-google{
+		height:400px;
+		max-height:100vh;
+		width:100%;
+	}
+}

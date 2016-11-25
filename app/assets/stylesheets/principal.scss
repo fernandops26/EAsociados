@@ -1,0 +1,23 @@
+$cssCore: false;
+$cssHelpers: true;
+$devMode: false;
+
+@import "ed-grid";
+
+@import "sass/utiles/fonts";
+@import "sass/base/variables";
+@import "sass/utiles/mixins";
+@import "sass/componentes/botones";
+@import "sass/componentes/combos";
+@import "sass/componentes/formulario";
+@import "sass/modulos/header";
+@import "sass/modulos/footer";
+@import "sass/paginas/index";
+@import "sass/paginas/servicios";
+@import "sass/paginas/equipo";
+@import "sass/paginas/contacto";
+@import "sass/paginas/publicaciones";
+@import "sass/paginas/verPublicacion";
+@import "sass/paginas/nosotros";
+
+
