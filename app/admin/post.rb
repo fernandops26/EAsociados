@@ -1,7 +1,5 @@
 ActiveAdmin.register Post do
 
-	permit_params :titulo, :contenido, :imagen, :estado
-
 	form(:html => { :multipart => true }) do |f|
 		f.inputs 'Publicacion' do
 			f.input :titulo

@@ -3,7 +3,7 @@ ActiveAdmin.register Sectore do
 	form(:html => { :multipart => true }) do |f|
 		f.inputs 'Sector' do
 			f.input :nombre
-			f.input :descripcion
+			f.input :descripcion,:as => :ckeditor
 			f.input :imagen, :as => :file, :label => "Subir Imagen"
 			f.input :estado
 		end
