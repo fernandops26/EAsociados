@@ -17,11 +17,11 @@ ActiveAdmin.register Servicio do
 #
 # or
 #
-permit_params do
+ permit_params do
    permitted = [:nombre, :descripcion, :imagen, :estado]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
-# end
+ end
 
 
 end

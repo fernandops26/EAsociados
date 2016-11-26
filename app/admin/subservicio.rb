@@ -5,7 +5,7 @@ ActiveAdmin.register Subservicio do
 	form(:html => { :multipart => true }) do |f|
 		f.inputs 'Subservicio' do
 			f.input :nombre
-			f.input :descripcion
+			f.input :descripcion, :as => :ckeditor
 			f.input :imagen, :as => :file, :label => "Subir Imagen"
 			f.input :estado
 		end
@@ -19,11 +19,11 @@ ActiveAdmin.register Subservicio do
 #
 # or
 #
-# permit_params do
-#   permitted = [:permitted, :attributes]
+ permit_params do
+   permitted = [:nombre, :descripcion, :imagen, :estado]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
-# end
+ end
 
 
 end
