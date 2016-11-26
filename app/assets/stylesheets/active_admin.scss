@@ -18,6 +18,11 @@ $skinLogo: none;
 
 @import "active_skin";
 
+.cke_chrome {
+  width: 79.5% !important;
+  overflow: hidden;
+}
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
