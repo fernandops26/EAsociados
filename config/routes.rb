@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
    get 'sectores' => 'statics#sectors'
 
+   get 'sectores/:id' => 'statics#sectors'
+
    get 'equipo' => 'statics#team'
 
    get 'contacto' => 'statics#contact'

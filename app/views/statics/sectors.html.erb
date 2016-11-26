@@ -1,6 +1,6 @@
 <div class="servicios-page ">
 	<div class="ed-container full" style="position: relative;justify-content: center;">
-			<div style="background:url(<%=asset_path 'servicio.jpg'%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
+			<div style="background:url(<%=(@sector_actual.imagen_url)%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
 			<div class="v-subservicio-opacidad"></div>
 		<div class="v-subservicio">
 			<h1 class="v-subservicio-titulo">Este es un subservicio</h1>
@@ -11,38 +11,20 @@
 	</div>
 	<div class="ed-container v-sector-contenido ">
 		<div class="ed-item s-100 l-70 ">
-			<h2 class="v-subservicio-segundo-titulo">Este es un sector</h2>
-			<div class="v-subservicio-separacion"></div>
-			<p class="v-sector-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-sector-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-sector-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-sector-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-sector-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-sector-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-sector-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<ul>
-   <li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
-   <li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
-   <li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
-   <li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
-</ul>
-			
-						<dl>
-					   <dt>Definition list</dt>
-						   <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-						aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						commodo consequat.</dd>
-						   <dt>Lorem ipsum dolor sit amet</dt>
-						   <dd>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-						aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea 
-						commodo consequat.</dd>
-					</dl>
+			<h2 class="v-sector-segundo-titulo">Este es un sector</h2>
+			<div class="v-sector-separacion"></div>
+			<div class="v-sector-texto">
+				<%=raw(@sector_actual.descripcion)%>
+			</div>
 		</div>
 		<div class="ed-item s-100 l-30" style="border-left: rgba(221, 221, 221, 0.2) solid 2px;margin-top: 1em;}">
 			<div class="v-sector-menu-vertical">
 				<h3 class="v-sector-menu-vertical-cabecera">Sectores</h3>
 				<ul class="v-sector-menu-vertical-lista" id="vMenu-servicios">
-					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Agroindustria y pesca</a></li>
+					<%@sectores.each do |sector|%>
+						<li class="v-sector-menu-vertical-item"><a href="/sectores/<%=sector.id%>" class="v-sector-menu-vertical-link"><%=sector.nombre%></a></li>
+					<%end%>
+					<!--
 					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Agua y saneamiento</a></li>
 					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Comercio</a></li>
 					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Construcción e infraestructura de transporte</a></li>
@@ -52,7 +34,7 @@
 					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Minería</a></li>
 					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Sector público</a></li>
 					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Telecomunicaciones</a></li>
-					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Otros sectores</a></li>
+					<li class="v-sector-menu-vertical-item"><a href="#" class="v-sector-menu-vertical-link">Otros sectores</a></li>-->
 				</ul>
 			</div>
 		</div>
