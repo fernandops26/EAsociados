@@ -15,11 +15,14 @@ gem 'coffee-rails', '~> 4.1.0'
 # gem 'therubyracer', platforms: :ruby
 
 gem 'carrierwave'
+gem 'mini_magick'
+
 gem 'activeadmin', github: 'activeadmin'
 gem 'activeadmin_addons'
 gem 'active_skin'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
+gem 'ckeditor'
 
 
 # Use jquery as the JavaScript library

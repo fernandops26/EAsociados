@@ -1,9 +1,11 @@
 ActiveAdmin.register Post do
 
+	permit_params :titulo, :contenido, :imagen, :estado
+
 	form(:html => { :multipart => true }) do |f|
-		f.inputs 'Post' do
+		f.inputs 'Publicacion' do
 			f.input :titulo
-			f.input :contenido
+			f.input :contenido, :as => :ckeditor
 			f.input :imagen, :as => :file, :label => "Subir Imagen"
 			f.input :estado
 		end
