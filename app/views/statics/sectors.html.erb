@@ -3,7 +3,7 @@
 			<div style="background:url(<%=(@sector_actual.imagen_url)%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
 			<div class="v-subservicio-opacidad"></div>
 		<div class="v-subservicio">
-			<h1 class="v-subservicio-titulo">Este es un subservicio</h1>
+			<h1 class="v-subservicio-titulo"><%=@sector_actual.nombre%></h1>
 			<div class="ed-container main-center" style="background-color: #fff;margin-top: auto;z-index: 30">
 				<div class="ed-item s-100 l-95" style="	height: 35px;z-index: 100;"></div>
 			</div>
@@ -11,7 +11,7 @@
 	</div>
 	<div class="ed-container v-sector-contenido ">
 		<div class="ed-item s-100 l-70 ">
-			<h2 class="v-sector-segundo-titulo">Este es un sector</h2>
+			<h2 class="v-sector-segundo-titulo"><%=@sector_actual.nombre%></h2>
 			<div class="v-sector-separacion"></div>
 			<div class="v-sector-texto">
 				<%=raw(@sector_actual.descripcion)%>
