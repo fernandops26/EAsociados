@@ -6,6 +6,7 @@ ActiveAdmin.register Subservicio do
 		f.inputs 'Subservicio' do
 			f.input :nombre
 			f.input :descripcion, :as => :ckeditor
+			f.input :servicio, member_label: :nombre
 			f.input :imagen, :as => :file, :label => "Subir Imagen"
 			f.input :estado
 		end
@@ -20,7 +21,7 @@ ActiveAdmin.register Subservicio do
 # or
 #
  permit_params do
-   permitted = [:nombre, :descripcion, :imagen, :estado]
+   permitted = [:nombre, :descripcion, :imagen, :estado, :servicio_id]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
  end
