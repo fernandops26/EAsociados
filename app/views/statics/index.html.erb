@@ -13,14 +13,14 @@
 			</div>
 		</div>
 		
-		<%if !@servicios.nil?%>
+		<%if !@servicios_global.nil?%>
 		<div class="ed-item s-100 ed-container full servicios-contenedor abcenter ">
 			<div class="ed-item s-100 m-90 l-70 xl-60">
 				<h3 class="servicios-titulo">Servicios</h3>
 			</div>
 				<div class="ed-item s-100 m-90 l-70 xl-60 servicios">
 					
-					<%@servicios.each do |servicio|%>
+					<%@servicios_global.each do |servicio|%>
 						<div class="servicio-item abcenter">
 							<div class="servicio-fondo" style="background:url(<%=servicio.imagen_url%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
 							</div>
