@@ -8,7 +8,7 @@ class StaticsController < ApplicationController
   end
 
   def sectors
-    @sectores=Sectore.where(estado: true).order(nombre: :desc)
+    @sectores=Sectore.where(estado: true).order(nombre: :asc)
   end
 
   def team
@@ -31,7 +31,7 @@ class StaticsController < ApplicationController
       @sector_actual=Sectore.find(params[:id])
 
     else
-      @sector_actual=Sectore.order(nombre: :desc).first
+      @sector_actual=Sectore.order(nombre: :asc).first
     end
 
   end

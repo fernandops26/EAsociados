@@ -122,7 +122,9 @@
 				}
 
 				@include to(l){
-						background:$negro;
+					/*color:$color-dos !important;
+					font-weight: bold;*/
+						//background:$negro;
 					
 				}
 			}
@@ -144,13 +146,18 @@
 
 			@include to(l){
 				color:$blanco;
+				font-weight: bold;
+
 				&:hover{
+					color:$color-dos !important;
 					//color:lighten(#1B15DE,10);
 				}
 			}
 
 			@include from(l){
 			//line-height:1.5em !important;
+
+					
 
 			}
 
@@ -193,6 +200,23 @@
 		&-link{
 			font-size:.8em;
 			text-transform:uppercase;
+
+			@include to(l){
+				color:rgba(#fff,.6);
+				&:hover{
+					//color:lighten(#1B15DE,10);
+				}
+			}
+
+			@include from(l){
+				color:lighten(#000,30%) !important;
+
+				&:hover{
+					color:$color-dos !important;
+				}
+			//line-height:1.5em !important;
+
+			}
 		}
 
 	}

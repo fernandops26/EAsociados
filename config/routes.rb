@@ -14,11 +14,15 @@ Rails.application.routes.draw do
   #front
    root 'statics#index'
 
-   get 'servicios' => 'statics#services'
+   get 'servicios/:id' => 'statics#services'
+   
+   
+   get 'servicios/:id/subservicios/:subservicio_id' => 'statics#servicios'
 
    get 'sectores' => 'statics#sectors'
 
    get 'sectores/:id' => 'statics#sectors'
+
 
    get 'equipo' => 'statics#team'
 
