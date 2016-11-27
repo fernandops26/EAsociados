@@ -12,32 +12,36 @@
 				<a href="#" class="btn banner-btn btn-4 "><span>Contáctanos</span></a>
 			</div>
 		</div>
-
+		
+		<%if !@servicios.nil?%>
 		<div class="ed-item s-100 ed-container full servicios-contenedor abcenter ">
 			<div class="ed-item s-100 m-90 l-70 xl-60">
 				<h3 class="servicios-titulo">Servicios</h3>
 			</div>
 				<div class="ed-item s-100 m-90 l-70 xl-60 servicios">
-
-					<div class="servicio-item abcenter">
-						<div class="servicio-fondo" style="background:url(<%=asset_path 'img-header.jpg'%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
+					
+					<%@servicios.each do |servicio|%>
+						<div class="servicio-item abcenter">
+							<div class="servicio-fondo" style="background:url(<%=servicio.imagen_url%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
+							</div>
+							<div class="servicio-opacidad">
+							</div>
+							<h4 class="servicio-texto"><%=servicio.nombre%></h4>
+							<ul class="servicio-lista">
+								<li class="servicio-lista-item">
+									<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
+								</li>
+								<li class="servicio-lista-item">
+									<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
+								</li>
+								<li class="servicio-lista-item">
+									<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
+								</li>
+							</ul>
 						</div>
-						<div class="servicio-opacidad">
-						</div>
-						<h4 class="servicio-texto">Asesoría</h4>
-						<ul class="servicio-lista">
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-						</ul>
-					</div>
+					<%end%>
 
+					<!--
 					<div class="servicio-item abcenter">
 						<div class="servicio-fondo" style="background:url(<%=asset_path 'img-header.jpg'%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
 						</div>
@@ -134,8 +138,10 @@
 					</div>
 
 				</div>
+				-->
 
 		</div>
+		<%end%>
 
 		<div class="ed-item s-100 ed-container full empresas-contenedor abcenter ">
 			<div class="ed-item s-100 m-90 l-70 xl-60 empresas slick-parent-empresas">
