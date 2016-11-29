@@ -2,6 +2,8 @@ class StaticsController < ApplicationController
 
   before_action :set_sector, only:[:sectors]
   def index
+
+    @subservicios=Subservicio.where(estado:true)
   end
 
   def services
