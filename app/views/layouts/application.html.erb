@@ -16,9 +16,9 @@
 		<ul class="menu" id="main-menu">
 			<img class="menu-logo to-l" src=<%=asset_path 'logo.png'%> />
 			<li class="menu-item"><a href="#" class="menu-link">Servicios</a>
-				<%if !@servicios.nil?%>
+				<%if !@servicios_global.nil?%>
 					<ul class="submenu">
-						<%@servicios.each do |servicio|%>
+						<%@servicios_global.each do |servicio|%>
 							<li class="submenu-item"><a href="/servicios/<%=servicio.id%>" class="submenu-link"><%=servicio.nombre%></a></li>
 						<%end%>
 						<!--

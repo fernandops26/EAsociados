@@ -27,17 +27,16 @@
 							<div class="servicio-opacidad">
 							</div>
 							<h4 class="servicio-texto"><%=servicio.nombre%></h4>
-							<ul class="servicio-lista">
-								<li class="servicio-lista-item">
-									<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-								</li>
-								<li class="servicio-lista-item">
-									<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-								</li>
-								<li class="servicio-lista-item">
-									<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-								</li>
-							</ul>
+							<% subservicios_coincidentes=@subservicios.select{|item| item.servicio_id== servicio.id }%>
+							<%if subservicios_coincidentes.size>0%>
+								<ul class="servicio-lista">
+									<%subservicios_coincidentes.each do |subservicio| %>
+										<li class="servicio-lista-item">
+											<a href="/servicios/<%=subservicio.id%>" class="servicio-lista-link"><%= subservicio.nombre%></a>
+										</li>
+									<%end%>
+								</ul>
+							<%end%>
 						</div>
 					<%end%>
 
