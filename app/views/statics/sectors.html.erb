@@ -1,9 +1,15 @@
 <div class="servicios-page ">
 	<div class="ed-container full" style="position: relative;justify-content: center;">
+		<%if !@sector_actual.nil?%>
 			<div style="background:url(<%=(@sector_actual.imagen_url)%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
-			<div class="v-subservicio-opacidad"></div>
+		<%end%>
+		<div class="v-subservicio-opacidad"></div>
 		<div class="v-subservicio">
-			<h1 class="v-subservicio-titulo"><%=@sector_actual.nombre%></h1>
+			<h1 class="v-subservicio-titulo">
+				<%if !@sector_actual.nil?%>
+					<%=@sector_actual.nombre%>
+				<%end%>
+			</h1>
 			<div class="ed-container main-center" style="background-color: #fff;margin-top: auto;z-index: 30">
 				<div class="ed-item s-100 l-95" style="	height: 35px;z-index: 100;"></div>
 			</div>
@@ -11,10 +17,14 @@
 	</div>
 	<div class="ed-container v-sector-contenido ">
 		<div class="ed-item s-100 l-70 ">
-			<h2 class="v-sector-segundo-titulo"><%=@sector_actual.nombre%></h2>
-			<div class="v-sector-texto" style="margin-top: 0;">
-				<%=raw(@sector_actual.descripcion)%>
-			</div>
+			<%if !@sector_actual.nil?%>
+				<h2 class="v-sector-segundo-titulo">
+						<%=@sector_actual.nombre%>
+				</h2>
+				<div class="v-sector-texto" style="margin-top: 0;">
+					<%=raw(@sector_actual.descripcion)%>
+				</div>
+			<%end%>
 		</div>
 		<div class="ed-item s-100 l-30" style="border-left: rgba(221, 221, 221, 0.2) solid 2px;margin-top: 1em;}">
 			<div class="v-sector-menu-vertical">
