@@ -1,5 +1,5 @@
 .footer{
-
+	@include stickyFooter;
 	padding:3em 0;
 	background:#e8e8e8;
 	&-contenedor{

@@ -17,6 +17,9 @@ class StaticsController < ApplicationController
   def team
   end
 
+  def subscribe
+  end
+
   def contact
   end
 
