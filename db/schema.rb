@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202000334) do
+ActiveRecord::Schema.define(version: 20161207224521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -82,7 +82,10 @@ ActiveRecord::Schema.define(version: 20161202000334) do
     t.boolean  "estado"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "role_id"
   end
+
+  add_index "equipos", ["role_id"], name: "index_equipos_on_role_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "titulo"
@@ -130,5 +133,6 @@ ActiveRecord::Schema.define(version: 20161202000334) do
 
   add_index "subservicios", ["servicio_id"], name: "index_subservicios_on_servicio_id", using: :btree
 
+  add_foreign_key "equipos", "roles"
   add_foreign_key "subservicios", "servicios"
 end

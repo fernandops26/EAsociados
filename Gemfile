@@ -19,6 +19,7 @@ gem 'mini_magick'
 
 gem 'activeadmin', github: 'activeadmin'
 gem 'activeadmin_addons'
+gem 'responsive_active_admin'
 gem 'active_skin'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
