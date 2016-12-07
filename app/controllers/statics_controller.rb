@@ -17,6 +17,9 @@ class StaticsController < ApplicationController
   def team
   end
 
+  def subscribe
+  end
+
   def contact
   end
 
@@ -34,7 +37,7 @@ class StaticsController < ApplicationController
       @sector_actual=Sectore.find(params[:id])
 
     else
-      @sector_actual=Sectore.order(nombre: :asc).first
+      @sector_actual=Sectore.where(estado:true).order(nombre: :asc).first
     end
 
   end

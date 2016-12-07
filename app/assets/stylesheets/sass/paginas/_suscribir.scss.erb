@@ -1,0 +1,155 @@
+.suscribir-page{
+
+	font-family:'HelveticaNeue';
+	margin:60px 0 0;
+	background-color: lighten(#000,95%);
+	.v-suscribir{
+		display: flex;
+		align-items:center;
+		min-height: 250px;
+		height: 30vh;
+		position: relative;
+		width:100%;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		@include from(m){
+			justify-content: flex-start;
+		}
+
+		&-img,&-opacidad,&-efecto-titulo{
+			position:absolute;
+			width:100%;
+			height:100%;
+			top:0;
+			left:0;
+		}
+		&-img{
+			z-index:5;
+			background-attachment: fixed;
+		}
+
+		&-opacidad{
+			background:linear-gradient(to bottom,transparent 0,rgba($color-uno,.4) 100%);
+			z-index:10;
+		}
+
+		&-titulo{
+			text-align:center;
+			font-weight: bold;
+			//margin-top:1em;
+			margin-left:.5em;
+			text-transform:uppercase;
+			position: relative;
+			z-index:20;
+			font-size:3em;
+			color:#fff;
+			text-shadow: 35px 35px 0px rgba(#fff, .2);
+
+			@include from(m){
+				font-size:3em;
+			}
+
+			
+		}
+	}
+
+	//Contenido suscribir
+
+	.suscribir{
+		margin:1em auto;
+		@include from(m){
+			justify-content: space-around;
+		}
+
+		@include from(l){
+			//justify-content: center;
+		}
+		&-formulario{
+			margin:auto;
+			background: #fff;
+			display: flex;
+			//flex-shrink: 0;
+			flex-direction: column;
+			max-width: 440px;
+			text-align: center;
+			border-radius: 5px;
+			overflow: hidden;
+			box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+			
+			@include to(1000px){
+				margin-bottom:.5em;
+			}
+			//@include sombra();
+		}
+
+		&-header{
+			padding: 50px 50px 140px 50px;
+  			min-height: 150px;
+  			background: url(<%=asset_path 'carta.png' %>)  no-repeat center 150px;
+		}
+
+		&-titulo{
+			color: darken($color-uno,10%);
+			text-transform: uppercase;
+			font-size: 30px;
+			letter-spacing: 4px;
+
+		}
+
+		&-subtitulo{
+			font-size: 13px;
+  			color: rgba(#5C7698, .8);
+		}
+
+		&-body{
+			display: flex;
+			justify-content: space-between;
+
+			> form{
+				flex-grow: 1;
+				display: flex;
+			}
+		}
+
+		&-input{
+			background: rgba($color-dos,.7);
+			border: none;
+			padding: 20px 25px;
+			flex-grow: 1;
+			color: #fff;
+
+			&:focus{
+				outline: none;
+			}
+		}
+
+		&-input::-webkit-input-placeholder{
+			color: rgba(92,118,152,0.7);
+			color:#fff;
+			text-transform: uppercase;
+		}
+
+		&-btn{
+			//background-color: $color-dos;
+			border:solid 1px $color-dos;
+			color:$color-dos;
+			transition: all .3s;
+			&:hover{
+				background-color: $color-dos;
+				color:#fff;
+			}
+		}
+
+
+		&-informacion{
+			background-color: #fff;
+			//flex-grow: 1;
+			height:4em;
+			@include sombra();
+		}
+
+	}
+
+	
+}
