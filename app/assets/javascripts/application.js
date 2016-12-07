@@ -15,3 +15,4 @@
 //= require jquery.turbolinks
 //= require jquery.slick
 //= require_tree .
+//= stub 'contacto'

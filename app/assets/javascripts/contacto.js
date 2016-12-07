@@ -1,4 +1,4 @@
-/*$(document).on('ready',function(){
+$(document).on('ready',function(){
 
 var contentString = '<div><h4 style="color:rgba(0,0,0,.7);margin-bottom:0;">Economistas Asociados</h4><p>Calle las Dalias D1-5 Interior 101 Urb. Miraflores</p></div>';
 
@@ -39,4 +39,4 @@ marker.addListener('click', function() {
 
 google.maps.event.addDomListener(window, 'load', initialize);
 
-});*/
+});
