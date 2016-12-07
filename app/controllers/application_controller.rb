@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :find_services
 
   def find_services
-    @servicios_global=Servicio.where(estado:true).order(nombre: :asc)
+    @servicios_global=Servicio.includes(:subservicios).where(estado:true).order(nombre: :asc)
   end
 
 end

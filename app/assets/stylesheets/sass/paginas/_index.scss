@@ -78,22 +78,22 @@
 			font-family: $font-texto;
 			font-weight:400;
 			@include from(s){
-				color:red;
+				//color:red;
 			}
 
 			@include from(m){
 				font-size: 1.1em;
-				color:blue;
+				//color:blue;
 			}
 
 			@include from(l){
 				font-size: 1.2em;
-				color:green;
+				//color:green;
 			}
 
 			@include from(xl){
 				font-size: 1.3em;
-				color:yellow;
+				//color:yellow;
 			}
 
 
@@ -376,10 +376,11 @@
 		}
 
 		&-cabecera{
-			background-color:$gris;
 			box-sizing:border-box !important;
 			padding:1.3em 1.5em;
+			background-color: $color-dos;
 			text-align:right;
+			color:lighten(#000,15%);
 			//margin:.3em;
 
 			@include to(l){
@@ -442,8 +443,13 @@
 			}
 
 			&-titulo{
+				font-family:$font-subtitulo;
 				text-align:left;
 				margin:.5em 0;
+				>a{
+					color:rgba(#000,.8);
+
+				}
 			}
 
 			&-texto{
