@@ -32,7 +32,7 @@
 								<ul class="servicio-lista">
 									<%subservicios_coincidentes.each do |subservicio| %>
 										<li class="servicio-lista-item">
-											<a href="/servicios/<%=subservicio.id%>" class="servicio-lista-link"><%= subservicio.nombre%></a>
+											<a href="/servicios/<%=servicio.id%>/subservicios/<%=subservicio.id%>" class="servicio-lista-link"><%= subservicio.nombre%></a>
 										</li>
 									<%end%>
 								</ul>
@@ -195,7 +195,7 @@
 			<div class="ed-item s-100 m-90 l-70 xl-60 ed-container anuncios-contenedor ">
 				<div class="ed-item s-100 m-100 l-2-3 ">
 					<div class="anuncios-cabecera">
-						<h2 class="anuncios-cabecera-titulo">Anuncios</h2>
+						<h2 class="anuncios-cabecera-titulo">Publicaciones</h2>
 						<h3 class="anuncios-cabecera-parrafo">Aqui debe encontrarse algun texto realcionado a los anuncios que encuentra el visitantte</h3>
 						<a href="#" class="anuncios-cabecera-link">Ver más</a>
 					</div>

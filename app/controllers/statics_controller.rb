@@ -1,8 +1,9 @@
 class StaticsController < ApplicationController
 
   before_action :set_sector, only:[:sectors]
-  def index
+  before_action :set_service, only:[:services]
 
+  def index
     @subservicios=Subservicio.where(estado:true)
   end
 
@@ -36,6 +37,17 @@ class StaticsController < ApplicationController
       @sector_actual=Sectore.order(nombre: :asc).first
     end
 
+  end
+
+  def set_service
+
+    #si existe el parametro servicio
+    if(params[:id].present?)
+      @servicio_actual=Servicio.includes(:subservicios).find_by(id:params[:id], estado:true)
+    
+    else
+      @servicio_actual=Servicio.includes(:subservicios).where(estado:true).order(nombre: :asc).first
+    end
   end
 
 end

@@ -1,6 +1,16 @@
 <div class="servicios-page ">
 	<div class="ed-container full" style="position: relative;justify-content: center;">
-			<div style="background:url(<%=asset_path 'servicio.jpg'%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
+	<!--Parametro subservicio ha sido enviado y existe dentro del arreglo del servicio actual-->
+		<%if params[:subservicio_id].present? and @servicio_actual.subservicios.exists?(:id=>params[:subservicio_id])%>
+			<%subservicio_activo=@servicio_actual.subservicios.find(params[:subservicio_id])%>
+			<div style="background:url(<%=subservicio_activo.imagen_url%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
+		<!--Parametro subservicio ha sido enviado y pero no esta dentro del arreglo de servicio actual-->
+		<%elsif params[:subservicio_id].present? and !@servicio_actual.subservicios.exists?(:id=> params[:subservicio_id])%>
+			<div style="background:url(<%=@servicio_actual.imagen_url%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
+		<!--Parametro subservicio no se ha enviado, solamente esta el servicio-->
+		<%else%>
+			<div style="background:url(<%=@servicio_actual.imagen_url%>);background-size:cover;background-position: center;" class="v-subservicio-img"></div>
+		<%end%>
 			<div class="v-subservicio-opacidad"></div>
 		<div class="v-subservicio">
 			<h1 class="v-subservicio-titulo">Este es un subservicio</h1>
@@ -9,24 +19,66 @@
 			</div>
 		</div>
 	</div>
-	<div class="ed-container v-subservicio-contenido ">
-		<div class="ed-item s-100 l-70 ">
-			<h2 class="v-subservicio-segundo-titulo">Este es un subservicio</h2>
-			<div class="v-subservicio-separacion"></div>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-			<p class="v-subservicio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis voluptatem iure, eum impedit vero, iste, labore repellat ab commodi aperiam, officiis. Voluptates, velit modi deserunt ipsa accusantium dolorum similique labore?, Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa asperiores consequuntur modi officiis repellendus, itaque illo quis excepturi cumque provident necessitatibus deserunt obcaecati nobis voluptatem perspiciatis laudantium voluptas quas rem!</p>
-		</div>
+	<div class="ed-container v-subservicio-contenido">
+	<!--Parametro subservicio ha sido enviado y existe dentro del arreglo del servicio actual-->
+		<%if params[:subservicio_id].present? and @servicio_actual.subservicios.exists?(:id=>params[:subservicio_id])%>
+		<%subservicio_activo=@servicio_actual.subservicios.find(params[:subservicio_id])%>
+				<div class="ed-item s-100 l-70 ">
+					<h2 class="v-subservicio-segundo-titulo">
+					<%=subservicio_activo.nombre%>
+					</h2>
+					<div class="v-subservicio-texto" style="margin-top:0em">
+						<%=raw(subservicio_activo.descripcion)%>
+					</div>
+					<p style="margin-top: 2em; color:#666">También te puede interesar:</p>
+					<ul class="v-subservicio-disponibles">
+						<%@servicio_actual.subservicios.each do |sub|%>
+							<li class="v-subservicio-disponibles-item"><a href="/servicios/<%=@servicio_actual.id%>/subservicios/<%=sub.id%>" class="v-subservicio-disponibles-link"><%=sub.nombre%></a></li>
+						<%end%>
+					</ul>
+				</div>
+		<!--Parametro subservicio ha sido enviado y pero no esta dentro del arreglo de servicio actual-->
+		<%elsif params[:subservicio_id].present? and !@servicio_actual.subservicios.exists?(:id=> params[:subservicio_id])%>
+			<div class="ed-item s-100 l-70 ">
+					<h2 class="v-subservicio-segundo-titulo">No existe el servicio que estas buscando</h2>
+					<%if @servicio_actual.subservicios.size>0%>
+						<div class="v-subservicio-texto">Tal vez estas buscando:</div>
+					<ul class="v-subservicio-disponibles">
+						<%@servicio_actual.subservicios.each do |sub|%>
+							<li class="v-subservicio-disponibles-item"><a href="/servicios/<%=@servicio_actual.id%>/subservicios/<%=sub.id%>" class="v-subservicio-disponibles-link"><%=sub.nombre%></a></li>
+						<%end%>
+					</ul>
+					<%end%>
+			</div>
+		<!--Parametro subservicio no se ha enviado, solamente esta el servicio-->
+		<%else%>
+			<div class="ed-item s-100 l-70 ">
+						<h2 class="v-subservicio-segundo-titulo"><%=@servicio_actual.nombre%></h2>
+						<div class="v-subservicio-texto">
+							<%=raw(@servicio_actual.descripcion)%>
+						</div>
+						<ul class="v-subservicio-disponibles">
+						<%@servicio_actual.subservicios.each do |sub|%>
+							<li class="v-subservicio-disponibles-item"><a href="#" class="v-subservicio-disponibles-link"><%=sub.nombre%></a></li>
+						<%end%>
+						</ul>
+				</div>
+		<%end%>
+		
 		<div class="ed-item s-100 l-30" style="border-left: rgba(221, 221, 221, 0.2) solid 2px;margin-top: .3em;}">
 			<div class="v-subservicio-menu-vertical">
 				<h3 class="v-subservicio-menu-vertical-cabecera">Servicios</h3>
 				<ul class="v-subservicio-menu-vertical-lista" id="vMenu-servicios">
-					<li class="v-subservicio-menu-vertical-item"><a href="#" class="v-subservicio-menu-vertical-link">Asesoria</a>
+					<% @servicios_global.each do |servicio|%>
+						<li class="v-subservicio-menu-vertical-item"><a href="/servicios/<%=servicio.id%>" class="v-subservicio-menu-vertical-link"><%=servicio.nombre%></a>
+							<ul class="v-subservicio-menu-vertical-submenu">
+								<%servicio.subservicios.each do |sub|%>
+									<li class="v-subservicio-menu-vertical-subitem"><a href="/servicios/<%=servicio.id%>/subservicios/<%=sub.id%>" class="v-subservicio-menu-vertical-sublink"><%=sub.nombre%></a></li>
+								<%end%>
+							</ul>
+						</li>
+					<%end%>
+					<!--<li class="v-subservicio-menu-vertical-item"><a href="#" class="v-subservicio-menu-vertical-link">Asesoria</a>
 						<ul class="v-subservicio-menu-vertical-submenu">
 							<li class="v-subservicio-menu-vertical-subitem"><a href="#" class="v-subservicio-menu-vertical-sublink">Empora itaque nisi dicta iure. Veniam eius aut repreheit</a></li>
 							<li class="v-subservicio-menu-vertical-subitem"><a href="#" class="v-subservicio-menu-vertical-sublink">Empora itaque nisi dicta iure. Veniam eius aut reprehenderit</a></li>
@@ -42,7 +94,7 @@
 					</li>
 					<li class="v-subservicio-menu-vertical-item"><a href="#" class="v-subservicio-menu-vertical-link">Consultoria</a></li>
 					<li class="v-subservicio-menu-vertical-item"><a href="#" class="v-subservicio-menu-vertical-link">Encuestas</a></li>
-					<li class="v-subservicio-menu-vertical-item"><a href="#" class="v-subservicio-menu-vertical-link">Investigación</a></li>
+					<li class="v-subservicio-menu-vertical-item"><a href="#" class="v-subservicio-menu-vertical-link">Investigación</a></li>-->
 				</ul>
 			</div>
 		</div>
