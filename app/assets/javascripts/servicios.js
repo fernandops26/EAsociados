@@ -1,4 +1,4 @@
-let vMenu = function(menuId) {
+/*let vMenu = function(menuId) {
               menu = document.getElementById(menuId),
            console.log(menu);
 
@@ -27,10 +27,12 @@ let vMenu = function(menuId) {
         });
         //console.log(menuItem.querySelector('a').nextElementSibling);
 
-        /*//Crear toggle button para submenus
+        //Crear toggle button para submenus
+
+        /*
         let expandSubmenu = document.createElement('div');
         expandSubmenu.classList.add('expand-submenu');
-        menuItem.appendChild(expandSubmenu);*/
+        menuItem.appendChild(expandSubmenu);*//*s
       }else{
         
         menuItem.querySelector('a').addEventListener('click', (e) => {
@@ -45,4 +47,4 @@ let vMenu = function(menuId) {
 
 $(document).on('ready',function(){
   vMenu('vMenu-servicios');
-});
+});*/
