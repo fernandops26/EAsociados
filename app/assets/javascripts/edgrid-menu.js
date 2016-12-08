@@ -1,7 +1,7 @@
 let edMenu = function(navId,menuId) {
            let nav = document.getElementById(navId),
               menu = document.getElementById(menuId),
-      toggleButton = document.getElementById('${navId}-toggle');
+      toggleButton = document.getElementById(`${navId}-toggle`);
            //console.log(menu);
 
   function showNav() {
@@ -14,10 +14,10 @@ let edMenu = function(navId,menuId) {
     if (toggleButton) {
       toggleButton.addEventListener('click', showNav);
     } else {
-      console.error('Not found ${navId}-toggle Id')
+      console.error(`Not found ${navId}-toggle Id`)
     }
   } else {
-    console.error('Not found ${navId} Id')
+    console.error(`Not found ${navId} Id`)
   }
 
   if (menu) {

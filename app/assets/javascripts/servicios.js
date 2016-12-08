@@ -1,4 +1,4 @@
-/*let vMenu = function(menuId) {
+let vMenu = function(menuId) {
               menu = document.getElementById(menuId),
            console.log(menu);
 
@@ -29,10 +29,10 @@
 
         //Crear toggle button para submenus
 
-        /*
+        
         let expandSubmenu = document.createElement('div');
         expandSubmenu.classList.add('expand-submenu');
-        menuItem.appendChild(expandSubmenu);*//*s
+        menuItem.appendChild(expandSubmenu)
       }else{
         
         menuItem.querySelector('a').addEventListener('click', (e) => {
@@ -47,4 +47,4 @@
 
 $(document).on('ready',function(){
   vMenu('vMenu-servicios');
-});*/
+});
