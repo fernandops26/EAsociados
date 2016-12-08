@@ -1,8 +1,13 @@
 ActiveAdmin.register Post do
 
+	belongs_to :category, optional: true
+	belongs_to :equipo, optional: true
+
 	form(:html => { :multipart => true }) do |f|
 		f.inputs 'Publicacion' do
 			f.input :titulo
+			f.input :category, member_label: :nombre
+			f.input :equipo, member_label: :apellidos
 			f.input :contenido, :as => :ckeditor
 			f.input :imagen, :as => :file, :label => "Subir Imagen"
 			f.input :estado
@@ -18,7 +23,7 @@ ActiveAdmin.register Post do
 # or
 #
  permit_params do
-   permitted = [:titulo, :contenido,:imagen,:estado]
+   permitted = [:titulo, :contenido,:imagen,:estado, :category_id, :equipo_id]
 #   permitted << :other if params[:action] == 'create' && current_user.admin?
 #   permitted
  end
