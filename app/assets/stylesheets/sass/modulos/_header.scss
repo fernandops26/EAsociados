@@ -6,15 +6,25 @@
 	top:0;
 		@include to(l){
 			justify-content:space-between;
+			background-color: lighten(#000,90%);
+			border:none;
+		}
+
+		@include from(m){
+			height:70px;
 		}
 
 		@include from(l){
 			background:white;
 		}
 
+
+
 	.logo{
+		
 		height:auto;
-		max-width: 100%;
+		width:100%;
+		max-width: 65px;
 		min-width: 55px;
 
 		&-contenedor{
@@ -49,7 +59,8 @@
 				@include edMenu(l);
 			@include to(l){
 				padding-top:1em;
-				height: calc(100vh - 3px);
+				min-height: calc(100vh);
+				height:auto;
 				margin-top: 0;
 				max-width:400px;
 			}
@@ -90,7 +101,6 @@
 				}
 			}
 
-			
 
 		}
 

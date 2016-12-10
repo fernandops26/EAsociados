@@ -13,6 +13,7 @@
 	}
 
 	&-parrafo{
+		//text-align:justify;
 		font-family:$font-texto;
 	}
 
@@ -58,6 +59,7 @@
 
 	&-link{
 		line-height:1.7em;
+		color:$color-uno;
 	}
 
 
@@ -74,10 +76,13 @@
 				line-height:1.5em;
 				display:block;
 				margin:0;
+				color:rgba(#000,.7);
+				font-weight:bold;
 			}
 
 			&-texto{
-			 width:100%;
+			  color: rgba(#000,.7);
+			  width:100%;
 			  white-space: nowrap;
 			  overflow: hidden;
 			  text-overflow: ellipsis;

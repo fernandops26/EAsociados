@@ -23,14 +23,8 @@
 				<div class="ed-item s-100 main-end">
 					<div class="select select-m v-equipo-filtrado-select">
 				    <span class="arr"></span>
-				    <select>
-				      <option>Socios</option>
-				      <option>Directores</option>
-				      <option>Asociados</option>
-				      <option>Analistas/Consultores</option>
-				    </select>
+				    <%=select_tag "rol", options_from_collection_for_select(@roles, "id", "nombre")%>
 				  </div>
-
 				</div>
 			</div>
 

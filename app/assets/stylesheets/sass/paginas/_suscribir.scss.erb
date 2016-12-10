@@ -112,19 +112,29 @@
 			> form{
 				flex-grow: 1;
 				display: flex;
+				flex-wrap:wrap;
+				justify-content:center;
 			}
 		}
 
 		&-input{
-			background: rgba($color-dos,.7);
+			background: lighten($color-dos,20%);
 			border: none;
 			padding: 20px 25px;
 			flex-grow: 1;
 			color: #fff;
 
+			font-family:$font-texto;
+
 			&:focus{
 				outline: none;
 			}
+
+			@include to(383px){
+				margin-bottom:.5em;
+			}
+
+
 		}
 
 		&-input::-webkit-input-placeholder{
@@ -138,6 +148,7 @@
 			border:solid 1px $color-dos;
 			color:$color-dos;
 			transition: all .3s;
+			flex-grow:1;
 			&:hover{
 				background-color: $color-dos;
 				color:#fff;

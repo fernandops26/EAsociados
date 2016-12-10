@@ -15,6 +15,7 @@ class StaticsController < ApplicationController
   end
 
   def team
+    @roles=Role.all.order(nombre: :asc)
   end
 
   def subscribe
