@@ -48,6 +48,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'jquery-turbolinks'
 gem "jquery-slick-rails"
 gem 'vuejs-rails'
+gem 'lodash-rails'
 
 
 group :development, :test do

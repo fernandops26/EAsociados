@@ -16,5 +16,6 @@
 //= require jquery.slick
 //= require vue
 //= require vue-resource
+//= require lodash
 //= require_tree .
 //= stub 'contacto'
