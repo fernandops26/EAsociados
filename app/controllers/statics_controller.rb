@@ -16,6 +16,11 @@ class StaticsController < ApplicationController
 
   def team
     @roles=Role.all.order(nombre: :asc)
+    @equipo=Equipo.where(estado:true).order(apellidos: :asc)
+    respond_to do |format|
+      format.html
+      format.json { render :json => {:roles => @roles,:equipo => @equipo}}
+    end
   end
 
   def subscribe
