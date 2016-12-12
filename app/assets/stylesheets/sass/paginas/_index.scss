@@ -452,12 +452,18 @@
 				box-sizing:border-box !important;
 				text-align:right;
 				padding: .5em .5em .3em;
+				min-height:130px;
+
+				display:flex;
+				flex-wrap:wrap;
 			}
 
 			&-titulo{
 				font-family:$font-subtitulo;
 				text-align:left;
 				margin:.5em 0;
+				//height:3em;
+				overflow:hidden;
 				>a{
 					color:rgba(#000,.8);
 					@include from(m){
@@ -482,7 +488,8 @@
 			  overflow: hidden;
 			  text-overflow: ellipsis;
 			  color:rgba($gris,.7);
-
+				
+				display:none;
 			  @include from(l){
 			  	color:rgba(#000,.8);
 			  }
@@ -490,7 +497,10 @@
 
 			&-fecha{
 				display:block;
-				margin-top:.5em;
+				//margin-top:.5em;
+				margin-top:auto;
+				margin-left:auto;
+				margin-bottom:.5em;
 				font-size:1em;
 				color:rgba($gris,.4);
 				color:darken($color-uno,25%);

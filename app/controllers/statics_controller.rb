@@ -3,7 +3,7 @@ class StaticsController < ApplicationController
   before_action :set_sector, only:[:sectors]
   before_action :set_service, only:[:services]
   before_action :set_publications, only:[:publications]
-  before_action :set_locale, only:[:publications,:showPublication]
+  before_action :set_locale, only:[:publications,:showPublication,:index]
 
  
   def set_locale
@@ -12,6 +12,7 @@ class StaticsController < ApplicationController
 
   def index
     @subservicios=Subservicio.where(estado:true)
+    @publicaciones=Post.where(estado:true).order(created_at: :desc).limit(4)
   end
 
   def services

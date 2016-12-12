@@ -200,61 +200,21 @@
 						<a href="/publicaciones" class="anuncios-cabecera-link">Ver más</a>
 					</div>
 				</div>
-				<div class="ed-item s-100 m-50 l-1-3 " >
-					<div class="anuncio">
-						<div class="anuncio-cabeza">
-							<a class="anuncio-imagen" href="#" style="background: url(<%=asset_path 'img-header.jpg'%>);background-size:cover;background-position:center;"></a>
-							<span class="anuncio-categoria">Noticia</span>
-						</div>
-						<div class="anuncio-cuerpo">
-							<h4 class="anuncio-titulo"><a href="#">Titulo de anuncio un poco mas extenso</a></h4>
-							<p class="anuncio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi</p>
-							<span class="anuncio-fecha">12-05-2016</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="ed-item s-100 m-50 l-1-3 " >
-					<div class="anuncio">
-						<div class="anuncio-cabeza">
-							<a class="anuncio-imagen" href="#" style="background: url(<%=asset_path 'img-header.jpg'%>);background-size:cover;background-position:center;"></a>
-							<span class="anuncio-categoria">Noticia</span>
-						</div>
-						<div class="anuncio-cuerpo">
-							<h4 class="anuncio-titulo"><a href="#">Titulo de anuncio un poco mas extenso</a></h4>
-							<p class="anuncio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi</p>
-							<span class="anuncio-fecha">12-05-2016</span>
+				<%@publicaciones.each do |pub|%>
+					<div class="ed-item s-100 m-50 l-1-3 " >
+						<div class="anuncio">
+							<div class="anuncio-cabeza">
+								<a class="anuncio-imagen" href="/publicaciones/<%=pub.id%>" style="background: url(<%=pub.imagen_url%>);background-size:cover;background-position:center;"></a>
+								<span class="anuncio-categoria"><%=pub.category.nombre%></span>
+							</div>
+							<div class="anuncio-cuerpo">
+								<h4 class="anuncio-titulo"><a href="/publicaciones/<%=pub.id%>"><%=pub.titulo.mb_chars.limit(70).to_s%></a></h4>
+								<div class="anuncio-texto"><%= raw(pub.contenido.mb_chars.limit(61).to_s)%>	</div>
+								<span class="anuncio-fecha"><%= l(pub.created_at,format: :medium)%></span>
+							</div>
 						</div>
 					</div>
-				</div>
-
-				<div class="ed-item s-100 m-50 l-1-3 " >
-					<div class="anuncio">
-						<div class="anuncio-cabeza">
-							<a class="anuncio-imagen" href="#" style="background: url(<%=asset_path 'img-header.jpg'%>);background-size:cover;background-position:center;"></a>
-							<span class="anuncio-categoria">Noticia</span>
-						</div>
-						<div class="anuncio-cuerpo">
-							<h4 class="anuncio-titulo"><a href="#">Titulo de anuncio un poco mas extenso</a></h4>
-							<p class="anuncio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi</p>
-							<span class="anuncio-fecha">12-05-2016</span>
-						</div>
-					</div>
-				</div>
-
-				<div class="ed-item s-100 m-50 l-1-3 " >
-					<div class="anuncio">
-						<div class="anuncio-cabeza">
-							<a class="anuncio-imagen" href="#" style="background: url(<%=asset_path 'img-header.jpg'%>);background-size:cover;background-position:center;"></a>
-							<span class="anuncio-categoria">Noticia</span>
-						</div>
-						<div class="anuncio-cuerpo">
-							<h4 class="anuncio-titulo"><a href="#">Titulo de anuncio un poco mas extenso</a></h4>
-							<p class="anuncio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi</p>
-							<span class="anuncio-fecha">12-05-2016</span>
-						</div>
-					</div>
-				</div>
+				<%end%>
 				
 			</div>
 		</div>
