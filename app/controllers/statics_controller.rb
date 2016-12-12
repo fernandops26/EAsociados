@@ -2,9 +2,17 @@ class StaticsController < ApplicationController
 
   before_action :set_sector, only:[:sectors]
   before_action :set_service, only:[:services]
+  before_action :set_publications, only:[:publications]
+  before_action :set_locale, only:[:publications,:showPublication,:index]
+
+ 
+  def set_locale
+    I18n.locale = :es || I18n.default_locale
+  end
 
   def index
     @subservicios=Subservicio.where(estado:true)
+    @publicaciones=Post.where(estado:true).order(created_at: :desc).limit(4)
   end
 
   def services
@@ -15,6 +23,12 @@ class StaticsController < ApplicationController
   end
 
   def team
+    @roles=Role.all.order(nombre: :asc)
+    @equipo=Equipo.where(estado:true).order(apellidos: :asc)
+    respond_to do |format|
+      format.html
+      format.json { render :json => {:roles => @roles,:equipo => @equipo}}
+    end
   end
 
   def subscribe
@@ -24,9 +38,15 @@ class StaticsController < ApplicationController
   end
 
   def publications
+    @categorias=Category.all
   end
 
   def showPublication
+    @categorias=Category.all
+
+    if params[:id].present?
+      @publicacion_actual=Post.includes(:category,:equipo).find(params[:id])
+    end
   end
 
   def our
@@ -50,6 +70,28 @@ class StaticsController < ApplicationController
     
     else
       @servicio_actual=Servicio.includes(:subservicios).where(estado:true).order(nombre: :asc).first
+    end
+  end
+
+
+  def set_publications
+    pagina=1
+    if params[:page].present?
+      pagina=params[:page]
+    else
+      pagina=1
+    end
+
+    if(params[:query].present? and params[:category].present?)
+      @publicaciones=Post.where(" estado=true and titulo LIKE ? and category_id= ?","%#{params[:query]}%", params[:category]).order(created_at: :desc).page(pagina).per_page(5)
+    
+    elsif (!params[:query].present? and params[:category].present?)
+      @publicaciones=Post.where(" estado=true and category_id= ?", params[:category]).order(created_at: :desc).page(pagina).per_page(5)
+    
+    elsif (params[:query].present? and !params[:category].present?)
+      @publicaciones=Post.where(" estado=true and titulo LIKE ? ","%#{params[:query]}%").order(created_at: :desc).page(pagina).per_page(5)
+    else
+      @publicaciones=Post.includes(:category).where(estado:true).order(created_at: :desc).page(pagina).per_page(5)
     end
   end
 

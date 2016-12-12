@@ -59,7 +59,7 @@
 						</div>
 						<ul class="v-subservicio-disponibles">
 						<%@servicio_actual.subservicios.each do |sub|%>
-							<li class="v-subservicio-disponibles-item"><a href="#" class="v-subservicio-disponibles-link"><%=sub.nombre%></a></li>
+							<li class="v-subservicio-disponibles-item"><a href="/servicios/<%=@servicio_actual.id%>/subservicios/<%=sub.id%>" class="v-subservicio-disponibles-link"><%=sub.nombre%></a></li>
 						<%end%>
 						</ul>
 				</div>

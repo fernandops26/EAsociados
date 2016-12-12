@@ -1,7 +1,7 @@
 let edMenu = function(navId,menuId) {
            let nav = document.getElementById(navId),
               menu = document.getElementById(menuId),
-      toggleButton = document.getElementById(`${navId}-toggle`);
+      toggleButton = document.getElementById('main-nav-toggle');
            //console.log(menu);
 
   function showNav() {

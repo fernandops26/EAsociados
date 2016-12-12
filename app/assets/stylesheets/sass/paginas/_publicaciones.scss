@@ -96,6 +96,28 @@
 
 		}
 
+		&-boton{
+			border:1px solid $color-dos;
+			color:$color-dos;
+
+			margin-top:.5em;
+			width:50%;
+			padding:0 2em;
+			line-height: 2.5em;
+
+			&:hover{
+				background-color:$color-dos;
+				color:#fff;
+			}
+
+			@include from(m){
+				width:auto;
+				margin-top:-3px;
+				margin-left:.5em;
+			}
+
+		}
+
 		.formulario-text{
 			border:1px solid $color-dos;
 
@@ -112,6 +134,17 @@
 	.publicaciones{
 			padding:.5em;
 			background-color: #FFF;
+
+		nav.pagination{
+			margin:.5em 0;
+			a{
+				color:$color-uno !important;
+			}
+			.page.current{
+				font-weight:bold;
+				color:darken($color-uno,30%);
+			}
+		}
 
 		@include from(m){
 			padding:1em;
@@ -191,9 +224,11 @@
 				color:lighten(#000,20%);
 				font-size:1.4em;
 				font-weight:bold;
-
+				width:100%;
+				display:block;
 				&:hover{
 					color:$color-uno;
+					text-decoration: none;
 
 				}
 			}

@@ -79,8 +79,12 @@
 		&-segundo-titulo{
 			color:$color-uno;
 			margin:5px 0 0;
-			font-size:1.8em;
+			font-size:2em;
 			font-family: $font-titulo;
+
+			@include to(m){
+				font-size:1.8em;
+			}
 
 		}
 
@@ -99,6 +103,7 @@
 			margin-top:2em;
 			&-item{
 				position:relative;
+				margin-bottom:1.5em;
 				/*&:before,&:after{
 					border-right: 4px solid $color-uno;
 			    content: '';
@@ -146,18 +151,26 @@
 					top:49%;
 
 				}
+
+				@include to(m){
+					margin-bottom:1em;
+				}
 			}
 
 			&-link{
 				color:#555;
-				font-size:1.3em;
+				font-size:1.2em;
 				font-weight: bold;
 				display:block;
-				line-height:3em;
+				line-height:1em;
 				&:hover{
 					text-decoration: none;
 					color:lighten(#000,30%);
 					text-decoration:underline;
+				}
+
+				@include to(m){
+					font-size:.9em;
 				}
 			}
 		}

@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
+  rescue_from ActiveRecord::RecordNotFound, :with => :render_404
+
   protect_from_forgery with: :exception
 
   before_action :find_services
@@ -9,4 +11,7 @@ class ApplicationController < ActionController::Base
     @servicios_global=Servicio.includes(:subservicios).where(estado:true).order(nombre: :asc)
   end
 
+  def render_404
+    render :template => "errors/error_404", :status => 404
+  end
 end
