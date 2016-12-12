@@ -255,6 +255,7 @@ DEPENDENCIES
   jquery-rails
   jquery-slick-rails
   jquery-turbolinks
+  kaminari
   lodash-rails
   mini_magick
   pg

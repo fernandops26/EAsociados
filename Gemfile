@@ -49,6 +49,7 @@ gem 'jquery-turbolinks'
 gem "jquery-slick-rails"
 gem 'vuejs-rails'
 gem 'lodash-rails'
+gem 'kaminari'
 
 
 group :development, :test do
