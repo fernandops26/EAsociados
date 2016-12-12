@@ -2,6 +2,7 @@
 	background-color: lighten(#000,95%);
 	margin:60px 0 0;
 	padding-bottom:30px;
+
 	.v-equipo{
 		display: flex;
 		align-items:center;
@@ -22,6 +23,7 @@
 			height:100%;
 			top:0;
 			left:0;
+			font-family:$font-titulo;
 		}
 		&-img{
 			z-index:5;
@@ -44,6 +46,7 @@
 			font-size:1.8em;
 			color:#fff;
 			text-shadow: 35px 35px 0px rgba(#fff, .1);
+			font-family:$font-titulo;
 
 			@include from(m){
 				font-size:2.2em;
@@ -85,97 +88,12 @@
 			margin:5px 0 0;
 			font-size:1.8em;
 			text-align: center;
+			font-family:$font-titulo;
 
 		}
 
 
 
-
-		&-menu-vertical{
-
-			&-cabecera{
-				color:$gris;
-				text-transform:uppercase;
-			}
-
-			&-lista{
-				//border:.5px solid;
-				list-style:none;
-				padding-left:0;
-			}
-
-			&-item{
-				padding-left:1.5em;
-				position: relative;
-				margin-bottom:.7em;
-
-
-				&:before,&:after{
-					border-right: 2px solid;
-			    content: '';
-			    display: block;
-			    height: 8px;
-			    margin-top: -6px;
-			    position: absolute;
-			    -moz-transform: rotate(135deg);
-			    -o-transform: rotate(135deg);
-			    -webkit-transform: rotate(135deg);
-			    transform: rotate(135deg);
-			    left: 10px;
-			    top: 14px;
-			    width: 0;
-				}
-
-				&:after{
-					 margin-top: -1px;
-			    -moz-transform: rotate(45deg);
-			    -o-transform: rotate(45deg);
-			    -webkit-transform: rotate(45deg);
-			    transform: rotate(45deg);
-				}
-			}
-
-			&-link{
-				color:$negro;
-				line-height:2em;
-
-				&:hover{
-					text-decoration:none;
-					color:$gris;
-				}
-
-			}
-
-			&-submenu{
-				list-style:none;
-				padding-left:.5em;
-				box-shadow: -3px 0 0 $gris-2;
-				overflow:hidden;
-				transition: max-height .5s;
-				transition-delay: 0;
-				max-height:0;
-
-				&.v-activo{
-					max-height:1000px;
-					transition: max-height 1s;
-				}
-			}
-
-			&-subitem{
-				margin-bottom:.7em;
-			}
-
-			&-sublink{
-				color:$gris;
-				font-size:.9em;
-				line-height:1.5em;
-			}
-
-
-
-		}
-
-		
 		&-contenido{
 			background:#fff;
 			padding:3em 0;
@@ -251,6 +169,7 @@
 					transform:translateX(-50%);
 					text-align:center;
 					z-index:30;
+					font-family:$font-texto;
 					padding: .5em 0;
 					&--nombre{
 						color:#fff;
@@ -339,6 +258,7 @@
 				font-size:1.6em;
 				color:$negro;
 				margin:0;
+				font-family:$font-titulo;
 			}
 
 			&-rol{
@@ -347,6 +267,7 @@
 				margin-top:.3em;
 				margin-bottom:1.5em;
 				padding:0;
+				font-family:$font-subtitulo;
 			}
 
 			&-descripcion{
@@ -354,6 +275,7 @@
 				line-height:1.4em;
 				text-align:justify;
 				font-size:.9em;
+				font-family:$font-texto;
 			}
 		}
 
