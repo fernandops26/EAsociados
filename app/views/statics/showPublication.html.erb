@@ -1,11 +1,11 @@
 <div class="show-publicacion-page">
 	<div class="ed-container full" style="position: relative;justify-content: center;">
-			<div style="background:url(<%=asset_path 'publicacion.jpg'%>);background-size:cover;background-position: center;" class="v-show-publicacion-img"></div>
+			<div style="background:url(<%=(@publicacion_actual.imagen_url)%>);background-size:cover;background-position: center;" class="v-show-publicacion-img"></div>
 			<div class="v-show-publicacion-opacidad"></div>
 		<div class="v-show-publicacion">
 			<div class="ed-container">
 				<div class="ed-item s-100">
-					<h1 class="v-show-publicacion-titulo">Este es el titulo de la publicacion medianamente largo</h1>
+					<h1 class="v-show-publicacion-titulo"><%=@publicacion_actual.titulo%></h1>
 				</div>
 			</div>
 			<!--<div class="ed-container main-center" style="background-color: #fff;margin-top: auto;z-index: 30">
@@ -16,20 +16,18 @@
 		</div>
 	</div>
 
-	<div class="ed-container ">
+	<div class="ed-container " style="padding-bottom: 10px">
 		<div class="ed-container ed-item s-100  cross-center busqueda ">
-			<h2 class="busqueda-titulo">Busqueda</h2>
-				<input type="text" class="formulario-text busqueda-filtro" placeholder="Buscar" style="margin-right: 1em;">
-			
-			<div class="select select-m busqueda-combo ">
-		    <span class="arr"></span>
-		    <select>
-		      <option>Convocatorias</option>
-		      <option>Eventos</option>
-		      <option>Noticias</option>
-		      <option>Analistas/Consultores</option>
-		    </select>
-		  </div>
+			<form action="/publicaciones" method="get">
+				<h2 class="busqueda-titulo">Busqueda</h2>
+				<input type="text" name="query" class="formulario-text busqueda-filtro" placeholder="Ingresa un texto que buscar" style="margin-right: 1em;" value="<%=params[:query]%>">
+				
+				<div class="select select-m busqueda-combo ">
+				    <span class="arr"></span>
+				    <%=select_tag "category", options_from_collection_for_select(@categorias, "id", "nombre",:selected => params[:category]),prompt:'Selecciona Categoria'%>
+				</div>
+				<input type="submit" class="btn busqueda-boton" value="Buscar">
+			</form>
 		</div>
 
 
@@ -37,12 +35,20 @@
 			<div class="informacion">
 
 				<div class="datos">
-				<span class="fecha">26, octubre 2016</span>
-					<a href="#" class="categoria">Noticias</a>
+				<span class="fecha"><%= l(@publicacion_actual.created_at,format: :long)%></span>
+					<a href="/publicaciones?category=<%=@publicacion_actual.category_id%>" class="categoria"><%=@publicacion_actual.category.nombre%></a>
 				</div>
 
 				<div class="informacion-texto">
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi asperiores quibusdam facilis id, excepturi dolorem porro veniam quas atque ea. Voluptate earum nisi maxime, dolores commodi facere consectetur ea eaque.</p>
+					<%= raw(@publicacion_actual.contenido)%>
+				</div>
+			</div>
+			<div class="autor">
+				<div class="autor-titulo">Publicado por:</div>
+				<div class="autor-imagen" style="background:url(<%=(@publicacion_actual.equipo.imagen_url)%>);background-size:cover;background-position: top;"></div>
+				<div class="autor-contenido">
+					<p class="autor-nombre"><%=(@publicacion_actual.equipo.nombres)%> <%=(@publicacion_actual.equipo.apellidos)%></p>
+					<p class="autor-rol"><%=(@publicacion_actual.equipo.correo)%></p>
 				</div>
 			</div>
 		</div>
@@ -51,7 +57,7 @@
 			<div class="contacto">
 				<h2 class="contacto-titulo">¿Necesitas más información?</h2>
 				<div class="enlaces">
-					<a href="#" class="enlace">
+					<a href="/contacto" class="enlace">
 						<span class="enlace-titulo">Ubicanos</span>
 						<p class="enlace-texto">Todo lo que necesitas saber de los lideres en la industria </p>
 					</a>
@@ -61,7 +67,7 @@
 						<p class="enlace-texto">Los temas de materia institucional 100% disponibles</p>
 					</a>
 
-					<a href="#" class="enlace">
+					<a href="/suscribir" class="enlace">
 						<span class="enlace-titulo">Entérate</span>
 						<p class="enlace-texto">Nuestras publicaciones en tu bandeja de email a un solo click</p>
 					</a>
