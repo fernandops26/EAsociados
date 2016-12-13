@@ -1,8 +1,10 @@
 class StaticsController < ApplicationController
+  skip_before_filter :verify_authenticity_token, :only => :subscribe_new
 
   before_action :set_sector, only:[:sectors]
   before_action :set_service, only:[:services]
   before_action :set_publications, only:[:publications]
+  before_action :susbcriptor_params, only:[:subscribe_new]
   before_action :set_locale, only:[:publications,:showPublication,:index]
 
  
@@ -32,6 +34,17 @@ class StaticsController < ApplicationController
   end
 
   def subscribe
+  end
+
+  def subscribe_new
+    @suscriptor=Inscrito.new(susbcriptor_params)
+    if @suscriptor.save
+      puts 'CORRECTO'
+    else
+      puts 'INCORRECTO'
+    end
+
+    render :subscribe
   end
 
   def contact
@@ -93,6 +106,10 @@ class StaticsController < ApplicationController
     else
       @publicaciones=Post.includes(:category).where(estado:true).order(created_at: :desc).page(pagina).per_page(5)
     end
+  end
+
+  def susbcriptor_params
+    params.permit(:nombre,:email)
   end
 
 end

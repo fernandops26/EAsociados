@@ -19,17 +19,20 @@
 					<p class="suscribir-subtitulo">Esperanos en tu correo</p>
 				</div>
 				<div class="suscribir-body">
-					<form action="">
-					<input type="text" placeholder="Tu nombre completo" class="suscribir-nombres">
-						<input type="text" class="suscribir-input" placeholder="Ingresa tu correo" />
-						<button class="suscribir-btn btn " value="">Subscribirme</button>
+					<form action="/suscribir" method="POST">
+					<input type="text" name="nombre" placeholder="Tu nombre completo" class="suscribir-nombres">
+						<input type="text" class="suscribir-input" name="email" placeholder="Ingresa tu correo" />
+						<button class="suscribir-btn btn " value="">Suscribirme</button>
 					</form>
 				</div>
 			</div>
 		</div>
-		<div class="ed-item s-100 m-100 l-60 ">
+		<div class="ed-item s-100 m-100 l-55 " style="background: #fff;">
 			<div class="suscribir-informacion">
-				
+			<h2 class="suscribir-informacion_titulo">Al suscribirte</h2>
+				<p class="suscribir-informacion_texto">Recibirás un email cada vez que publiquemos una <strong>noticia</strong>, <strong>evento</strong>, o lancemos una <strong>convocatoria</strong>, además de información adicional.</p>
+				<p class="suscribir-informacion_texto-dos">Todo esto <strong>a un solo click</strong>.</p>
+				<span class="suscribir-informacion_firma">Economistas Asociados</span>
 			</div>
 		</div>
 	</div>
