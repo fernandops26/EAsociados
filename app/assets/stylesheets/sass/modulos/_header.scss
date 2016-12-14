@@ -185,6 +185,7 @@
 	}
 
 	.submenu{
+		left:0;
 
 		@include from(l){
 			background-color: $blanco;
