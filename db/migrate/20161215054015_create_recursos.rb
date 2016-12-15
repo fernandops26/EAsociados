@@ -3,7 +3,7 @@ class CreateRecursos < ActiveRecord::Migration
     create_table :recursos do |t|
       t.string :titulo
       t.string :archivo
-      t.string :links
+      t.text :links
       t.references :servicio, index: true, foreign_key: true
       t.boolean :estado
 
