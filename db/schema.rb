@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161215043630) do
+ActiveRecord::Schema.define(version: 20161215054015) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -118,6 +118,18 @@ ActiveRecord::Schema.define(version: 20161215043630) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "recursos", force: :cascade do |t|
+    t.string   "titulo"
+    t.string   "archivo"
+    t.string   "links"
+    t.integer  "servicio_id"
+    t.boolean  "estado"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "recursos", ["servicio_id"], name: "index_recursos_on_servicio_id", using: :btree
+
   create_table "roles", force: :cascade do |t|
     t.string   "nombre"
     t.boolean  "estado"
@@ -158,5 +170,6 @@ ActiveRecord::Schema.define(version: 20161215043630) do
   add_foreign_key "equipos", "roles"
   add_foreign_key "posts", "categories"
   add_foreign_key "posts", "equipos"
+  add_foreign_key "recursos", "servicios"
   add_foreign_key "subservicios", "servicios"
 end
