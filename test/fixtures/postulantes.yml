@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nombres: MyString
+  email: MyString
+  cv: MyString
+  visto: false
+
+two:
+  nombres: MyString
+  email: MyString
+  cv: MyString
+  visto: false

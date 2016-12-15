@@ -1,10 +1,11 @@
 class StaticsController < ApplicationController
-  skip_before_filter :verify_authenticity_token, :only => :subscribe_new
+  skip_before_filter :verify_authenticity_token, only:[:subscribe_new,:postulate_new]
 
   before_action :set_sector, only:[:sectors]
   before_action :set_service, only:[:services]
   before_action :set_publications, only:[:publications]
   before_action :susbcriptor_params, only:[:subscribe_new]
+  before_action :postulate_params, only:[:postulate_new]
   before_action :set_locale, only:[:publications,:showPublication,:index]
 
  
@@ -68,6 +69,16 @@ class StaticsController < ApplicationController
   def postulate
   end
 
+  def postulate_new
+    @postulante=Postulante.new(postulate_params)
+    if @postulante.save
+      puts 'CORRECTO'
+    else
+      puts 'INCORRECTO'
+    end
+    render :postulate
+  end
+
   def set_sector
     if(params[:id].present?)
       @sector_actual=Sectore.find(params[:id])
@@ -114,5 +125,10 @@ class StaticsController < ApplicationController
   def susbcriptor_params
     params.permit(:nombre,:email)
   end
+
+  def postulate_params
+    params.permit(:nombres,:email,:cv)
+  end
+
 
 end
