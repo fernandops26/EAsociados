@@ -1,0 +1,43 @@
+<div class="postular-page ">
+	<div class="ed-container full" style="position: relative;justify-content: center;">
+		<div style="background:url(<%=asset_path 'postular.jpg'%>);background-size:cover;background-position: center;" class="v-postular-img"></div>
+		<div class="v-postular-opacidad"></div>
+		<div class="v-postular">
+			<div class="ed-container">
+				<div class="ed-item s-100">
+					<h1 class="v-postular-titulo">Postula</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ed-container postular  ">
+
+		<div class="ed-item s-100 m-70 l-40 ">
+			<div class="postular-formulario">
+				<div class="postular-header">
+					<h2 class="postular-titulo">postular</h2>
+					<p class="postular-subtitulo">Sube tu curriculum aquí</p>
+				</div>
+				<div class="postular-body">
+					<form action="/postular" method="POST" enctype="multipart/form-data" class="formulario">
+						<input type="text" name="nombre" placeholder="Tu nombre completo" class="postular-nombres formulario-text">
+						<input type="text" class="postular-input formulario-text" name="email" placeholder="Ingresa tu correo" />
+						<div class="formulario-file">
+						  <span class="formulario-file-span" id="cv-nombre-archivo">Selecciona tu archivo</span>
+						    <label for="cv" class="formulario-file-label">Cargar<input type="file" id="cv" name="cv" class="formulario-file-input"></label>
+						</div>
+						<button class="postular-btn btn " value="">postularme</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="ed-item s-100 m-100 l-55 " style="background: #fff;">
+			<div class="postular-informacion">
+			<h2 class="postular-informacion_titulo">Necesitamos profesionales como tú</h2>
+				<p class="postular-informacion_texto">Constantemente estamos en busca de <strong>nuevos talentos</strong> para integrar a nuestro staff.</p>
+				<p class="postular-informacion_texto-dos">Si consideras que tus habilidades se ajustan a los servicios que brindamos, no dudes <strong>postular</strong> y <strong>dejarnos tu CV</strong>.</p>
+				<span class="postular-informacion_firma">Economistas Asociados</span>
+			</div>
+		</div>
+	</div>
+</div>

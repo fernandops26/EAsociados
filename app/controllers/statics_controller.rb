@@ -65,6 +65,9 @@ class StaticsController < ApplicationController
   def our
   end
 
+  def postulate
+  end
+
   def set_sector
     if(params[:id].present?)
       @sector_actual=Sectore.find(params[:id])

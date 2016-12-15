@@ -8,24 +8,64 @@
 	}
 	
 	&-text,&-textarea{
-		border:none;
-		font-size:1em ;
+		//border:none;
+		//font-size:1em ;
 		padding:.5em;
+		padding: 15px;
 		width:100%;
 		color:rgba(#000,.5);
 
 		&:active,&:focus{
 			outline: none;
-			box-shadow:none;
+			//box-shadow:none;
 		}
 	}
 
-	&-text{
-		border-bottom:1px solid rgba(#000,.4);
-	}
 
 	&-textarea{
-		border-bottom:1px solid rgba(#000,.4);
-		font-size:1.2em !important;
+		//border-bottom:1px solid rgba(#000,.4);
+		//font-size:1.2em !important;
+	}
+
+	&-file{
+		width:100%;
+		display:flex;
+		align-items:flex-start;
+
+
+		&-input{
+			position: absolute;
+    		left: -9999px;
+		}
+
+		&-label{
+  			padding:0 1em;
+  			line-height:45px;
+			display:block;
+			background:$color-dos;
+			cursor:pointer;
+			color:#fff;
+			text-transform:uppercase;
+			
+  			&:hover{
+  				background:darken($color-dos,17%)
+  			}
+		}
+
+		&-span{
+			color:rgba(#000,.5);
+			outline:1px solid #ddd ;
+  			padding: 0 1em;
+  			display:block;
+			flex-grow:1;
+			line-height:43px;
+			order:1;
+			white-space: nowrap;
+			overflow:hidden;
+			margin-top:1px;
+			font-size:.9em;
+			//background:darken($color-uno ,10%);
+		}
+
 	}
 }
