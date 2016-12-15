@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  titulo: MyString
+  archivo: MyString
+  links: MyString
+  servicio_id: 
+  estado: false
+
+two:
+  titulo: MyString
+  archivo: MyString
+  links: MyString
+  servicio_id: 
+  estado: false
