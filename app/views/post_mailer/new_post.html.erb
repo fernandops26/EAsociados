@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1><%= @post.titulo %></h1>
+    <p>
+      <%= truncate(@post.contenido, length: 30) %>
+    </p>
+    <p>
+      <%= link_to "leer mas", publicaciones_url(@post) %>
+    </p>
+    <p>¡Gracias!</p>
+  </body>
+</html>
