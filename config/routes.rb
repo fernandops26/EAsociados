@@ -43,6 +43,8 @@ Rails.application.routes.draw do
    get 'postular' => 'statics#postulate'
 
    post 'postular' => 'statics#postulate_new'
+
+   get '/recursos' => 'statics#resources'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

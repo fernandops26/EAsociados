@@ -80,6 +80,7 @@
 
 		&-filtro{
 			font-size:1.1em;
+			padding:.55em .5em;
 			width:100%;
 			/*@include from(m){
 				width:450px;
@@ -170,12 +171,14 @@
 		}
 	}
 
-	.autor{
+	.autor,.sociales{
 		background-color: #FFF;
 		margin-top:1em;
 		padding:1em;
 		display:flex;
 		flex-wrap:wrap;
+	}
+	.autor{
 		&-titulo{
 			color:#aaa;
 			width:100%;
@@ -211,6 +214,7 @@
 			font-size:.8em;
 		}
 	}
+
 
 	//
 

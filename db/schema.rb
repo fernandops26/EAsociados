@@ -121,7 +121,7 @@ ActiveRecord::Schema.define(version: 20161215054015) do
   create_table "recursos", force: :cascade do |t|
     t.string   "titulo"
     t.string   "archivo"
-    t.string   "links"
+    t.text     "links"
     t.integer  "servicio_id"
     t.boolean  "estado"
     t.datetime "created_at",  null: false
