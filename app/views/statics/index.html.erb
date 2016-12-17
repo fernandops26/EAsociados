@@ -39,108 +39,9 @@
 							<%end%>
 						</div>
 					<%end%>
-
-					<!--
-					<div class="servicio-item abcenter">
-						<div class="servicio-fondo" style="background:url(<%=asset_path 'img-header.jpg'%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
-						</div>
-						<div class="servicio-opacidad">
-						</div>
-						<h4 class="servicio-texto">Capacitación</h4>
-						<ul class="servicio-lista">
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="servicio-item abcenter">
-						<div class="servicio-fondo" style="background:url(<%=asset_path 'img-header.jpg'%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
-						</div>
-						<div class="servicio-opacidad">
-						</div>
-						<h4 class="servicio-texto">Consultoría</h4>
-						<ul class="servicio-lista">
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="servicio-item abcenter">
-						<div class="servicio-fondo" style="background:url(<%=asset_path 'img-header.jpg'%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
-						</div>
-						<div class="servicio-opacidad">
-						</div>
-						<h4 class="servicio-texto">Encuestas</h4>
-						<ul class="servicio-lista">
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="servicio-item abcenter">
-						<div class="servicio-fondo" style="background:url(<%=asset_path 'img-header.jpg'%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
-						</div>
-						<div class="servicio-opacidad">
-						</div>
-						<h4 class="servicio-texto">Investigación</h4>
-						<ul class="servicio-lista">
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-						</ul>
-					</div>
-
-					<div class="servicio-item abcenter">
-						<div class="servicio-fondo" style="background:url(<%=asset_path 'img-header.jpg'%>);background-size:50%;background-position:top center;background-attachment: scroll;"">
-						</div>
-						<div class="servicio-opacidad">
-						</div>
-						<h4 class="servicio-texto">Proyectos</h4>
-						<ul class="servicio-lista">
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-							<li class="servicio-lista-item">
-								<a href="" class="servicio-lista-link">Lorem ipsum dolor sit amet,  repellat numquam accusantium.</a>
-							</li>
-						</ul>
-					</div>
-
-				</div>
-				-->
-
-		</div>
-		<%end%>
+			</div>
+			</div><!--AQUI AGREGUE UN DIV-->
+			<%end%>
 
 		<div class="ed-item s-100 ed-container full empresas-contenedor abcenter ">
 			<div class="ed-item s-100 m-90 l-70 xl-60 empresas slick-parent-empresas">
@@ -200,21 +101,20 @@
 						<a href="/publicaciones" class="anuncios-cabecera-link">Ver más</a>
 					</div>
 				</div>
-				<%@publicaciones.each do |pub|%>
-					<div class="ed-item s-100 m-50 l-1-3 " >
-						<div class="anuncio">
-							<div class="anuncio-cabeza">
-								<a class="anuncio-imagen" href="/publicaciones/<%=pub.id%>" style="background: url(<%=pub.imagen_url%>);background-size:cover;background-position:center;"></a>
-								<span class="anuncio-categoria"><%=pub.category.nombre%></span>
-							</div>
-							<div class="anuncio-cuerpo">
-								<h4 class="anuncio-titulo"><a href="/publicaciones/<%=pub.id%>"><%=pub.titulo.mb_chars.limit(70).to_s%></a></h4>
-								<div class="anuncio-texto"><%= raw(pub.contenido.mb_chars.limit(61).to_s)%>	</div>
-								<span class="anuncio-fecha"><%= l(pub.created_at,format: :medium)%></span>
-							</div>
+			<%@publicaciones.each do |pub|%>
+				<div class="ed-item s-100 m-50 l-1-3 " >
+					<div class="anuncio">
+						<div class="anuncio-cabeza">
+							<a class="anuncio-imagen" href="/publicaciones/<%=pub.id%>" style="background: url(<%=pub.imagen_url%>);background-size:cover;background-position:center;"></a>
+							<span class="anuncio-categoria"><%=pub.category.nombre%></span>
+						</div>
+						<div class="anuncio-cuerpo">
+							<h4 class="anuncio-titulo"><a href="/publicaciones/<%=pub.id%>"><%=pub.titulo.mb_chars.limit(70).to_s%></a></h4>
+							<span class="anuncio-fecha"><%= l(pub.created_at,format: :medium)%></span>
 						</div>
 					</div>
-				<%end%>
+				</div>
+			<%end%>
 				
 			</div>
 		</div>
