@@ -80,6 +80,12 @@ class StaticsController < ApplicationController
   end
 
   def resources
+    servicios=Servicio.where(estado:true).order(nombre: :asc)
+    recursos=Recurso.where(estado:true).order(created_at: :asc)
+    respond_to do |format|
+      format.html
+      format.json {render :json => {:servicios => servicios, :recursos => recursos }}
+    end
   end
 
   def set_sector

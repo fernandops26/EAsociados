@@ -96,189 +96,65 @@
 
 		&-contenido{
 			background:#fff;
-			padding:3em 0;
+			padding:1.5em 0;
 		}
-		
-		//v-recurso-recurso
-
-		&-recurso{
-			margin:3em 0;
-			justify-content:center;
-			@include grid('.v-recurso-recurso-item',1,2,3,4);
-
-			&-item{
-				position:relative;
-				min-height:250px;
-				max-width:330px;
-				margin-bottom:4em !important;
-
-				&:hover{
-					.v-recurso-recurso-item-contacto{
-						height:99%;
-						opacity: 1;
-						top:0;
-					}
-				}
-
-
-				&-contacto,&-datos{
-					position:absolute;
-				}
-
-				&-imagen{
-
-					img{
-						width:100%;
-						height:auto;
-					}
-				}
-
-				&-contacto{
-
-					background-color: rgba($gris,.3);
-					left:50%;
-					width:calc(100% - 30px);
-					height:90%;
-					bottom:0;
-					z-index:20;
-					display:flex;
-					justify-content:center;
-					flex-wrap: wrap;
-					align-items:center;
-					transform:translateX(-50%);
-					opacity:0;
-					transition:all.3s;
-					text-decoration:none;
-
-					&-item{
-						word-wrap: break-word;
-						margin:0;
-						width:80%;
-						text-align:center;
-						color:rgba(#fff,.8);
-						font-size:1.1em;
-						font-weight:bold;
-					}
-				}
-
-				&-datos{
-					background-color: $negro;
-					width:80%;
-					bottom:-20px;
-					left:50%;
-					transform:translateX(-50%);
-					text-align:center;
-					z-index:30;
-					font-family:$font-texto;
-					padding: .5em 0;
-					&--nombre{
-						color:#fff;
-						font-weight:bold;
-						margin-bottom:10px;
-						&-link{
-							text-decoration:none;
-							color:#fff;
-						}
-					}
-
-					&--separador{
-						width:85%;
-						margin:auto;
-						height:2px;
-						background: $color-uno;
-						border-radius:3px;
-					}
-
-					&--rol{
-						color:#fff;
-						font-style: italic;
-						margin-top:8px;
-					}
-				}
-			}
-
-		}
-
-		//v-recurso-perfil
-
-		&-perfil{
-			//border:solid 1px;
-			margin-top:3em;
-			padding-bottom:20px;
-
-			@include from(m){
-				justify-content:center;
-			}
-
-			&-izquierda{
-				@include to(m){
-					margin-bottom:2em;
-				}
-			}
-
-			&-derecha{
-				@include to(l){
-					margin-top:2em;
-				}
-			}
-
-
-
-			&-img{
-
-				border-radius: 2px 2px 0 0;
-				max-height:600px;
-				min-height:400px;
-				max-width:100%;
-				display:block;
-				margin:auto;
-			}
-
-			&-contacto{
-				background-color: rgba($gris,.2);
-				display:flex;
-				justify-content:space-around;
-				padding:1.4em .5em;
-				border-radius: 0 0 2px 2px;
-				.contacto{
-					font-size:.8em;
-					&-telefono{
-
-					}
-
-					&-email{
-
-					}
-				}
-
-			}
-
-
-			&-nombre{
-				font-size:1.6em;
-				color:$negro;
-				margin:0;
-				font-family:$font-titulo;
-			}
-
-			&-rol{
-				color:$gris;
-				margin: 0;
-				margin-top:.3em;
-				margin-bottom:1.5em;
-				padding:0;
-				font-family:$font-subtitulo;
-			}
-
-			&-descripcion{
-				color:$gris;
-				line-height:1.4em;
-				text-align:justify;
-				font-size:.9em;
-				font-family:$font-texto;
-			}
-		}
-
 
 	}
+
+
+		//recursos
+
+		.recursos{
+			@include grid('.recurso-item',1,2,3);
+			.recurso{
+				&-item{
+					border:1px solid #aaa;
+					padding:.5em .4em;
+					box-sizing:border-box;
+				}
+
+				&-nombre{
+					font-family:$font-titulo;
+					font-size:.9em;
+					margin-top:0;
+					margin-bottom:0;
+				}
+
+				&-archivo{
+					font-size:.8em;
+					text-transform:uppercase;
+					margin-top:0;
+					//display:block;
+					color:$color-dos;
+				}
+
+				&-span{
+					font-size:.9em;
+					color:#abc;
+					display:block;
+					margin-bottom:0;
+					padding-bottom:0;
+					margin-top:.8em;
+				}
+
+				&-links{
+					text-align:justify;
+					word-break: break-all;
+					ul,ol{
+						padding-left:1em;
+					}
+					p{
+						margin-bottom:0;
+						line-height:.7em;
+					}
+
+					a{
+						font-size:.8em;
+						color:$color-uno;
+					}
+				}
+			}
+		}
+
+		
 }

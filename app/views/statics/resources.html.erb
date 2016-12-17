@@ -1,23 +1,14 @@
 <script type="text/template" id="recurso_item-temp">
-	<div class="ed-item v-recurso-recurso-item">
-	<!--TAMAÑO IMAGEN RECOMENDADA 246 X 300 PIXELES-->
-		<div class="v-recurso-recurso-item-imagen">
-			<img :src="item.imagen.url" alt="">
-		</div>
-		<a href="#" class="v-recurso-recurso-item-contacto" @click.prevent="vistaPrevia" >
-			<div class="v-recurso-recurso-item-contacto-item" >Ver Perfil</div>
-		</a>
-		<div class="v-recurso-recurso-item-datos">
-			<p class="v-recurso-recurso-item-datos--nombre"><a href="#" class="v-recurso-recurso-item-datos--nombre-link">{{item.nombres | split }} {{item.apellidos}}</a></p>
-			<div class="v-recurso-recurso-item-datos--separador"></div>
-			<p class="v-recurso-recurso-item-datos--rol">{{item.profesion}}</p>
-		</div>
+	<div class="recurso-item">
+		<h3 class="recurso-nombre">{{recurso.titulo}} - <a class="recurso-archivo" target="_blank" :href="recurso.archivo.url">Descargar</a></h3>
+		<span class="recurso-span">Enlaces relacionados</span>
+		<div class="recurso-links" v-html="recurso.links"></div>
 	</div>
 </script>
 
 <div class="recurso-page" id="recurso-page">
 	<div class="ed-container full" style="position: relative;justify-content: center;">
-			<div style="background:url(<%=asset_path 'recurso.jpg'%>);background-size:cover;background-position: center;" class="v-recurso-img"></div>
+			<div style="background:url(<%=asset_path 'recursos.jpg'%>);background-size:cover;background-position: center;" class="v-recurso-img"></div>
 			<div class="v-recurso-opacidad"></div>
 		<div class="v-recurso">
 			<div class="ed-container">
@@ -33,21 +24,30 @@
 			</div>
 		</div>
 	</div>
-
-		<div class="ed-container v-equipo-contenido ">
-		<div class="ed-item s-100 l-100 ">
-
-			<div class="v-equipo-filtrado ed-container">
-				<div class="ed-item s-100 main-end">
-					<div class="select select-m v-equipo-filtrado-select">
-				    <span class="arr"></span>
-				    <select name="" id="" v-model="rol_seleccionado">
-				    	<option value="">Selecciona una opción</option>
-				    	<option v-for="rol in roles" :value="rol">{{rol.nombre}}</option>
-				    </select>
-				  </div>
+		
+		
+		<div class="ed-container v-recurso-contenido ">
+			<div class="ed-item s-100 l-70" style="margin:auto;">
+				<p style="font-size: 1.1em;text-align: center;">Aquí encontrarás documentos y enlaces de inteŕes relacionados con los servicios que brindamos en la empresa, estos recursos te servirán para informate y capacitarte en cada una de nuestras especialidades, son totalmente gratuitos.</p>
+			</div>
+			<div class="ed-item s-100 l-100 ">
+				<div class="v-recurso-filtrado ed-container">
+					<div class="ed-item s-100 main-end">
+						<div class="select select-m v-recurso-filtrado-select">
+					    <span class="arr"></span>
+					    <select name="" id="" v-model="servicio_seleccionado">
+					    	<option value="">Selecciona una opción</option>
+					    	<option v-for="servicio in servicios" :value="servicio">{{servicio.nombre}}</option>
+					    </select>
+					  </div>
+					</div>
 				</div>
 			</div>
-		</div>
+			<div class="ed-item s-100 l-70" style="margin:auto">
+				<div class="recursos">
+					<recurso-item v-for="recurso in recursos" :recurso="recurso"></recurso-item>
+					
+				</div>
+			</div>
 	</div>
 </div>

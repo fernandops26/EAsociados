@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
    get 'publicaciones' => 'statics#publications'
 
-   get 'publicaciones/:id' => 'statics#showPublication'
+   get 'publicaciones/:id' => 'statics#showPublication', :as => :publicacion
 
    get 'nosotros' => 'statics#our'
 
