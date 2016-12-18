@@ -14,10 +14,10 @@ let edMenu = function(navId,menuId) {
     if (toggleButton) {
       toggleButton.addEventListener('click', showNav);
     } else {
-      console.error(`Not found ${navId}-toggle Id`)
+      console.error('Not found')
     }
   } else {
-    console.error(`Not found ${navId} Id`)
+    console.error('Not found Id')
   }
 
   if (menu) {
