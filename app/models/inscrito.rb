@@ -1,7 +1,7 @@
 class Inscrito < ActiveRecord::Base
 
-	validates :nombre,presence:true
-	validates :email,presence:true
+	validates :nombre,presence:true, length:{minimum: 5}
+	validates :email,presence:true, email_format: { message: "el formato del email debe ser correcto" }
 
 	before_create :agregar_estado
 	after_create :enviar_correo

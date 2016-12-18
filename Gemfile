@@ -26,7 +26,7 @@ gem 'active_skin'
 gem 'devise'
 gem 'will_paginate', '~> 3.0'
 gem 'ckeditor'
-
+gem 'validates_email_format_of'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
