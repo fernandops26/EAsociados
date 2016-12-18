@@ -28,30 +28,49 @@
 			</div>
 		</div>
 		<div class="ed-item s-100 l-50 no-padding informacion-derecha">
+			<div class="ed-item s-100 " style="background: #fff;">
+					<%if flash[:correcto]%>
+						<div class="notificacion ">
+							<div class="notificacion-cerrar">x</div>
+							<p class="notificacion-texto"><%=flash[:correcto]%></p>
+						</div>
+					<%elsif flash[:errors]%>
+						<div class="notificacion">
+							<div class="notificacion-cerrar">x</div>
+							<p class="notificacion-texto">No se pudo enviar el mensaje, por favor corrige los siguientes problemas:</p>
+							<ul class="notificacion-lista">
+								<% flash[:errors].each do |key, value| %>
+									<li class="notificacion-item"><span class="notificacion-clave"><%=key%></span> - <%=value%></li>
+								<% end %>
+							</ul>
+						</div>
+					<%end%>
+			</div>
 			<div class="ed-item s-100">
 				<h3 class="informacion-titulo">Envianos un mensaje</h3>
 			</div>
-			<form action="" class="informacion-formulario ed-container ed-item">
+			<%=form_for @contacto, url: contacto_path, html: { class: "informacion-formulario ed-container ed-item"} do |f|%>
 				<div class=" ed-item s-100 formulario-caja">
 					<label for="" class="formulario-label">Nombre Completo</label>
-					<input type="text" class="formulario-text" placeholder="Nombre Completo" />
+					<%=f.text_field :nombres,{class:"formulario-text",placeholder:"Nombre Completo"}%>
 				</div>
 				<div class=" ed-item s-100 l-50 formulario-caja">
 					<label for="" class="formulario-label">Email</label>
-					<input type="text" class="formulario-text" placeholder="Email" />
+					<%=f.email_field :email,{class:"formulario-text",placeholder:"Email"}%>
 				</div>
 				<div class=" ed-item s-100 l-50 formulario-caja">
 					<label for="" class="formulario-label">Telefono/Celular</label>
-					<input type="text" class="formulario-text" placeholder="Telefono/Celular" />
+					<%=f.text_field :telefono,{class:"formulario-text",placeholder:"Telefono/Celular"}%>
 				</div>
 				<div class=" ed-item s-100 formulario-caja">
 					<label for="" class="formulario-label">Mensaje</label>
-					<textarea class="formulario-textarea" rows="10" placeholder="Mensaje"></textarea>
+
+					<%=f.text_area :mensaje,{class:"formulario-textarea",placeholder:"Mensaje",rows:"10"}%>
 				</div>
 				<div class="formulario-caja ed-item s-100">
 				<button class="btn btn-4" style="color:red"><span>Enviar</span></button>
 				</div>
-			</form>
+			<%end%>
 		</div>
 	</div>
 

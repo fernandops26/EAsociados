@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
    get 'contacto' => 'statics#contact'
 
+   post 'contacto' => 'statics#contact_new'
+
    get 'publicaciones' => 'statics#publications'
 
    get 'publicaciones/:id' => 'statics#showPublication', :as => :publicacion
@@ -44,7 +46,7 @@ Rails.application.routes.draw do
 
    post 'postular' => 'statics#postulate_new'
 
-   get '/recursos' => 'statics#resources'
+   get 'recursos' => 'statics#resources'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

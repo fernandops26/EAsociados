@@ -6,7 +6,8 @@ class StaticsController < ApplicationController
   before_action :set_publications, only:[:publications]
   before_action :susbcriptor_params, only:[:subscribe_new]
   before_action :postulate_params, only:[:postulate_new]
-  before_action :set_locale, only:[:publications,:showPublication,:index]
+  before_action :contact_params, only:[:contact_new]
+  before_action :set_locale
 
  
   def set_locale
@@ -40,15 +41,30 @@ class StaticsController < ApplicationController
   def subscribe_new
     @suscriptor=Inscrito.new(susbcriptor_params)
     if @suscriptor.save
-      puts 'CORRECTO'
+      @suscriptor=Inscrito.new
+      flash.now[:correcto]="Te has suscrito correctamente, te enviaremos un mensaje a tu correo."
+      render :subscribe
     else
-      puts 'INCORRECTO'
+      flash.now[:errors]=@suscriptor.errors
+      render :subscribe
     end
-
-    render :subscribe
   end
 
   def contact
+    @contacto=Contacto.new
+  end
+
+  def contact_new
+    @contacto=Contacto.new(contact_params)
+    if @contacto.save
+      @contacto=Contacto.new
+      flash.now[:correcto]="Tu mensaje ha sido enviado correctamente, pronto nos comunicaremos contigo."
+      render :contact
+    else
+      flash.now[:errors]=@contacto.errors
+      render :contact
+    end
+    
   end
 
   def publications
@@ -72,11 +88,13 @@ class StaticsController < ApplicationController
   def postulate_new
     @postulante=Postulante.new(postulate_params)
     if @postulante.save
-      puts 'CORRECTO'
+      @postulante=Contacto.new
+      flash.now[:correcto]="Tu postulación se ha procesado correctamente, la revisaremos."
+      render :postulate
     else
-      puts 'INCORRECTO'
+      flash.now[:errors]=@postulante.errors
+      render :postulate
     end
-    render :postulate
   end
 
   def resources
@@ -137,6 +155,10 @@ class StaticsController < ApplicationController
 
   def postulate_params
     params.permit(:nombres,:email,:cv)
+  end
+
+  def contact_params
+    params.require(:contacto).permit(:nombres,:email,:telefono,:mensaje)
   end
 
 

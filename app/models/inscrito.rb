@@ -1,5 +1,8 @@
 class Inscrito < ActiveRecord::Base
 
+	validates :nombre,presence:true
+	validates :email,presence:true
+
 	before_create :agregar_estado
 	after_create :enviar_correo
 

@@ -29,6 +29,24 @@
 		</div>
 		<div class="ed-item s-100 m-100 l-55 " style="background: #fff;">
 			<div class="suscribir-informacion">
+			<div style="background: #fff;">
+					<%if flash[:correcto]%>
+						<div class="notificacion ">
+							<div class="notificacion-cerrar">x</div>
+							<p class="notificacion-texto"><%=flash[:correcto]%></p>
+						</div>
+					<%elsif flash[:errors]%>
+						<div class="notificacion">
+							<div class="notificacion-cerrar">x</div>
+							<p class="notificacion-texto">No se pudo enviar el mensaje, por favor corrige los siguientes problemas:</p>
+							<ul class="notificacion-lista">
+								<% flash[:errors].each do |key, value| %>
+									<li class="notificacion-item"><span class="notificacion-clave"><%=key%></span> - <%=value%></li>
+								<% end %>
+							</ul>
+						</div>
+					<%end%>
+			</div>
 			<h2 class="suscribir-informacion_titulo">Al suscribirte</h2>
 				<p class="suscribir-informacion_texto">Recibirás un email cada vez que publiquemos una <strong>noticia</strong>, <strong>evento</strong>, o lancemos una <strong>convocatoria</strong>, además de información adicional.</p>
 				<p class="suscribir-informacion_texto-dos">Todo esto <strong>a un solo click</strong>.</p>
