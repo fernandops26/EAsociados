@@ -41,7 +41,7 @@ let vMenu = function(menuId) {
       }
     }
   } else {
-    console.error(`Not found ${menuId} Id`)
+    console.error('Not found Id')
   }
 };
 
