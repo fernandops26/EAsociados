@@ -1,5 +1,5 @@
-let edMenu = function(navId,menuId) {
-           let nav = document.getElementById(navId),
+var edMenu = function(navId,menuId) {
+           var nav = document.getElementById(navId),
               menu = document.getElementById(menuId),
       toggleButton = document.getElementById('main-nav-toggle');
            //console.log(menu);
@@ -22,8 +22,8 @@ let edMenu = function(navId,menuId) {
 
   if (menu) {
     // Detectar submenus
-    let menuItems = menu.querySelectorAll('li');
-    let menuItemsLength = menuItems.length;
+    var menuItems = menu.querySelectorAll('li');
+    var menuItemsLength = menuItems.length;
 
     function showSubMenu(e) {
       //e.preventDefault();
@@ -33,18 +33,18 @@ let edMenu = function(navId,menuId) {
       }
     }
 
-    menu.addEventListener('click', (e) => {
+    menu.addEventListener('click', function(e){
       showSubMenu(e);
     });
 
     while (menuItemsLength--) {
-      let menuItem = menuItems[menuItemsLength];
+      var menuItem = menuItems[menuItemsLength];
       // Detectar si un item es padre de un submenu
       if (menuItem.querySelector('ul') != null) {
         menuItem.classList.add('parent-submenu');
 
         //Crear toggle button para submenus
-        let expandSubmenu = document.createElement('div');
+        var expandSubmenu = document.createElement('div');
         expandSubmenu.classList.add('expand-submenu');
         menuItem.appendChild(expandSubmenu);
       }

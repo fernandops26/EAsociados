@@ -1,11 +1,11 @@
-let vMenu = function(menuId) {
+var vMenu = function(menuId) {
               menu = document.getElementById(menuId),
            console.log(menu);
 
   if (menu) {
     // Detectar submenus
-    let menuItems = menu.querySelectorAll('li');
-    let menuItemsLength = menuItems.length;
+    var menuItems = menu.querySelectorAll('li');
+    var menuItemsLength = menuItems.length;
 
     function showVSubMenu(e) {
       e.preventDefault();
@@ -18,11 +18,11 @@ let vMenu = function(menuId) {
 
 
     while (menuItemsLength--) {
-      let menuItem = menuItems[menuItemsLength];
+      var menuItem = menuItems[menuItemsLength];
       // Detectar si un item es padre de un submenu
       if (menuItem.querySelector('ul') != null) {
         
-        menuItem.querySelector('a').addEventListener('click', (e) => {
+        menuItem.querySelector('a').addEventListener('click', function(e){
           showVSubMenu(e);
         });
         //console.log(menuItem.querySelector('a').nextElementSibling);
@@ -30,12 +30,12 @@ let vMenu = function(menuId) {
         //Crear toggle button para submenus
 
         
-        let expandSubmenu = document.createElement('div');
+        var expandSubmenu = document.createElement('div');
         expandSubmenu.classList.add('expand-submenu');
         menuItem.appendChild(expandSubmenu)
       }else{
         
-        menuItem.querySelector('a').addEventListener('click', (e) => {
+        menuItem.querySelector('a').addEventListener('click', function(e){
           cancelEventLink(e);
         });
       }
