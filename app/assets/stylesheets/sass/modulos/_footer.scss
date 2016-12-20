@@ -15,6 +15,7 @@
 	&-parrafo{
 		//text-align:justify;
 		font-family:$font-texto;
+		color:lighten(#000,30%);
 	}
 
 	&-contacto{
@@ -23,8 +24,23 @@
 		&-lugar{
 			font-weight:bold;
 		}
+		
+		&-direccion,&-correo,&-telefono{
+			padding-left:1.2em;
+			position:relative;
+			color:lighten(#000,20%);
+			font-size:.95em;
+			&:before{
+				color:#000;
+				left:0;
+				position:absolute;
+				line-height:1em;
+			}
+
+		}
 
 		&-direccion{
+			
 		}
 
 		&-correo{
@@ -38,12 +54,26 @@
 	}
 
 	&-sociales{
-		&-facebook{
 
+		&-facebook,&-twitter{
+			padding:.4em;
+			color:#fff;
+			&:after{
+				display:flex;
+				justify-content: center;
+				align-items:center;
+			}
+
+			&:hover{
+				text-decoration:none;
+			}
+		}
+		&-facebook{
+			background-color: #3b5998;
 		}
 
 		&-twitter{
-
+			background-color: #1da1f2;
 		}
 	}
 
@@ -60,6 +90,7 @@
 	&-link{
 		line-height:1.7em;
 		color:$color-uno;
+		font-family:$font-texto;
 	}
 
 
@@ -68,16 +99,18 @@
 
 			&-item{
 				overflow:hidden;
-				margin-bottom:.5em;
+				margin-bottom:1em;
 				border-bottom:solid 1px;
+				font-family:$font-subtitulo;
+
 			}
 
 			&-titulo{
 				line-height:1.5em;
 				display:block;
 				margin:0;
-				color:rgba(#000,.7);
 				font-weight:bold;
+				color:$color-uno;
 			}
 
 			&-texto{

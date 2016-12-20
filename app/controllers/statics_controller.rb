@@ -16,7 +16,7 @@ class StaticsController < ApplicationController
 
   def index
     @subservicios=Subservicio.where(estado:true)
-    @publicaciones=Post.where(estado:true).order(created_at: :desc).limit(4)
+    
   end
 
   def services

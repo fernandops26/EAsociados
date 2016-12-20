@@ -4,6 +4,7 @@
   <title>EAsociados</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="https://maps.google.com/maps/api/js?key=AIzaSyAhW48Z9ZEnaGJFTcVgMx7XJIw2ksykyKs" type="text/javascript"></script>
+  <link href="https://file.myfontastic.com/ME4v9LQpwZf4R4XXspqMWS/icons.css" rel="stylesheet">
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -67,13 +68,13 @@
 
 		<div class="footer-contacto">
 			<span class="footer-contacto-lugar">Piura, Perú</span>
-			<p class="footer-contacto-direccion">Calle las Dalias D1-5 Interior 101 Urb.Miraflores</p>
-			<p class="footer-contacto-correo">williarhidalgo@gmail.com</p>
-			<p class="footer-contacto-telefono">968499806</p>
+			<p class="footer-contacto-direccion icon-ubicacion">Calle las Dalias D1-5 Interior 101 Urb.Miraflores</p>
+			<p class="footer-contacto-correo icon-email">williarhidalgo@gmail.com</p>
+			<p class="footer-contacto-telefono icon-phone">968499806</p>
 		</div>
 		<div class="footer-sociales">
-			<a href="" class="footer-sociales footer-sociales-facebook">F</a>
-			<a href="" class="footer-sociales footer-sociales-facebook">T</a>
+			<a href="https://www.facebook.com" class="footer-sociales footer-sociales-facebook icon-facebook"></a>
+			<a href="https://www.twitter.com" class="footer-sociales footer-sociales-twitter icon-twitter"></a>
 		</div>
 	</div>
 	<div class="ed-item s-100 m-1-3" >
@@ -103,18 +104,12 @@
 		<h4 class="footer-titulo">Últimos Anuncios</h4>
 		<div class="footer-anuncios">
 			<div class="anuncio ed-container">
-				<div class="ed-item anuncio-item s-100 no-padding">
-					<a class="anuncio-titulo" href="#">Titulo de anuncio 1</a>
-					<p class="anuncio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia impedit repellat, non totam error autem rem dolorem optio maxime similique magnam facilis quidem id. Eligendi quam optio doloribus eveniet animi!</p>
-				</div>
-				<div class="ed-item anuncio-item s-100 no-padding">
-					<a class="anuncio-titulo" href="#">Titulo de anuncio 2</a>
-					<p class="anuncio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Unde doloremque, dignissimos, recusandae in sapiente veritatis culpa nesciunt beatae corporis. Necessitatibus quos aliquid nemo. Laboriosam aspernatur reiciendis dolores ab, dicta veritatis.</p>
-				</div>
-				<div class="ed-item anuncio-item s-100 no-padding">
-					<a class="anuncio-titulo" href="#">Titulo de anuncio 3</a>
-					<p class="anuncio-texto">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos fugiat necessitatibus facilis praesentium facere cupiditate earum, aliquid pariatur perferendis, recusandae optio tempora, deserunt quae velit hic vel libero ad aperiam.</p>
-				</div>
+				<%@publicaciones_global.each do |pub|%>
+					<div class="ed-item anuncio-item s-100 no-padding">
+						<a class="anuncio-titulo" href="#"><%=pub.titulo%></a>
+					</div>
+				<%end%>
+				
 
 			</div>
 		</div>

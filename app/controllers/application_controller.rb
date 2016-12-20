@@ -9,6 +9,7 @@ class ApplicationController < ActionController::Base
 
   def find_services
     @servicios_global=Servicio.includes(:subservicios).where(estado:true).order(nombre: :asc)
+    @publicaciones_global=Post.where(estado:true).order(created_at: :desc).limit(4)
   end
 
   def render_404
