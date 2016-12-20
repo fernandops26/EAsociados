@@ -1,5 +1,6 @@
 ActiveAdmin.register Category do
-
+	actions :all
+	
 	form(:html => { :multipart => true }) do |f|
 		f.inputs 'Categoria' do
 			f.input :nombre
